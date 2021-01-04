@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomHibernateSQL", "CustomHibernateSQL\CustomHibernateSQL.csproj", "{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3D4CBE7-7E29-40ED-AA3A-0036AD1864B5}
+	EndGlobalSection
+EndGlobal
