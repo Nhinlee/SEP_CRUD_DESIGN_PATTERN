@@ -42,10 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDB\AbstractColumn.cs" />
+    <Compile Include="AbstractDB\AbstractTable.cs" />
     <Compile Include="AbstractDB\IDatabase.cs" />
+    <Compile Include="Attributes\ColumnAttribute.cs" />
+    <Compile Include="Attributes\TableAttribute.cs" />
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLServer\SQLColumn.cs" />
     <Compile Include="SQLServer\SQLDatabase.cs" />
     <Compile Include="TestingHibernateSQL\Employee.cs" />
     <Compile Include="TestingHibernateSQL\EmployeesDAO.cs" />
