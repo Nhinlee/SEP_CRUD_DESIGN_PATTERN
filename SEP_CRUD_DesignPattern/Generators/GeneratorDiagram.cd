@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SEP_CRUD_DesignPattern.Generators.Generator">
+    <Position X="2.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\Generator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.FolderExporter&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIEAAAAAAAAAAQAAAAABAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\FolderExporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.FileExporter" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Generators\FileExporter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.ProjectGenerator">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAABAABAAAAAQAAAAA=</HashCode>
+      <FileName>Generators\ProjectGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.SolutionGenerator">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAABAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Generators\SolutionGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SEP_CRUD_DesignPattern.Generators.IExport">
+    <Position X="7.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\IExport.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

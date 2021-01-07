@@ -1,0 +1,50 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD_DesignPattern.Generators" #>
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+<#
+	//Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatFormToGenerate", "FormatFormToGenerate\FormatFormToGenerate.csproj", "{D381F227-62FD-4455-B79A-3D914C95342C}"
+	List<ProjectGenerator> projects = generator.GetProjects();
+	for(int i=0; i< projects.Count; i++)
+	{
+		ProjectGenerator p = projects[i];
+		WriteLine("Project(\"{" + p.TypeGuid  +"}\") = \""+ p.Name +"\", \""+ p.Name +"\\"+ p.GetFileName() +"\", \"{ "+ p.Guid +"}\"");
+	}
+
+#>
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+	<#
+		//{D381F227-62FD-4455-B79A-3D914C95342C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		//{D381F227-62FD-4455-B79A-3D914C95342C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		//{D381F227-62FD-4455-B79A-3D914C95342C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		//{D381F227-62FD-4455-B79A-3D914C95342C}.Release|Any CPU.Build.0 = Release|Any CPU
+		for(int i = 0; i < projects.Count; i++)
+            {
+				ProjectGenerator p = projects[i];	
+				WriteLine("{"+p.Guid+"}.Debug|Any CPU.ActiveCfg = Debug|Any CPU");
+				WriteLine("{"+p.Guid+"}.Debug|Any CPU.Build.0 = Debug|Any CPU");
+				WriteLine("{"+p.Guid+"}.Release|Any CPU.ActiveCfg = Release|Any CPU");
+				WriteLine("{"+p.Guid+"}.Release|Any CPU.Build.0 = Release|Any CPU");
+            }
+	#>
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {<# Write(generator.Guid); #>}
+	EndGlobalSection
+EndGlobal
