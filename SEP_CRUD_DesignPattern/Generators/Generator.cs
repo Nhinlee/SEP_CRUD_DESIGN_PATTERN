@@ -9,7 +9,11 @@ namespace SEP_CRUD_DesignPattern.Generators
     public abstract class Generator
     {
         public string Name { get; protected set; }
+        public string RelativePath { get; protected set; }
         public abstract string GetFileName();
         public abstract string GetSourceCode();
+        public abstract string GetFullRelativePath();
+
+        public abstract void ExportToFile(string rootPath);
     }
 }

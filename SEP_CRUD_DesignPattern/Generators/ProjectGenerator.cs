@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SEP_CRUD_DesignPattern.Generators
 {
-    public class ProjectGenerator : Generator
+    public class ProjectGenerator : GroupGenerator<FileGenerator>
     {
         private const string typeGuid = "FAE04EC0-301F-11D3-BF4B-00C04F79EFBC";
         public string Guid { get; private set; }
@@ -15,7 +15,13 @@ namespace SEP_CRUD_DesignPattern.Generators
         public ProjectGenerator(string name)
         {
             this.Name = name;
+            this.RelativePath = "";
             this.Guid = System.Guid.NewGuid().ToString().ToUpper();
+
+            string propertiesFolderStr = "Properties";
+            this.files.Add(new SettingGenerator(propertiesFolderStr));
+            this.files.Add(new SettingsDesignerGenerator(propertiesFolderStr));
+            this.files.Add(new AssemblyInfoGenerator(this, propertiesFolderStr));
         }
         
         public override string GetSourceCode()

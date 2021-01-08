@@ -5,9 +5,9 @@
 <#@ import namespace="System.Collections.Generic" #>
 
 
-namespace FormatFormToGenerate
+namespace <#= generator.Namespace #>
 {
-    partial class GeneratorForm
+    partial class <#= generator.Name #>
     {
         /// <summary>
         /// Required designer variable.

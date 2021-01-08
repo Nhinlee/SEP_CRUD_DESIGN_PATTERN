@@ -1,48 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="SEP_CRUD_DesignPattern.Generators.Generator">
-    <Position X="2.5" Y="1" Width="1.5" />
+  <Class Name="SEP_CRUD_DesignPattern.Generators.AssemblyInfoGenerator" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\AssemblyInfoGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.FileGenerator" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Generators\FileGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.Generator" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAUABAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Generators\Generator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SEP_CRUD_DesignPattern.Generators.FolderExporter&lt;T&gt;" BaseTypeListCollapsed="true">
-    <Position X="8.75" Y="2.25" Width="1.5" />
+  <Class Name="SEP_CRUD_DesignPattern.Generators.GroupGenerator&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIEAAAAAAAAAAQAAAAABAAAAAAACAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Generators\FolderExporter.cs</FileName>
+      <HashCode>AAIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAgAAABAA=</HashCode>
+      <FileName>Generators\GroupGenerator.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="SEP_CRUD_DesignPattern.Generators.FileExporter" BaseTypeListCollapsed="true">
-    <Position X="6.5" Y="2.25" Width="1.5" />
+  <Class Name="SEP_CRUD_DesignPattern.Generators.ProjectGenerator" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAEAAAAAAAAA=</HashCode>
-      <FileName>Generators\FileExporter.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="SEP_CRUD_DesignPattern.Generators.ProjectGenerator">
-    <Position X="4.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAABAABAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAUAAABAABAAAAAQAAAAA=</HashCode>
       <FileName>Generators\ProjectGenerator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SEP_CRUD_DesignPattern.Generators.SolutionGenerator">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+  <Class Name="SEP_CRUD_DesignPattern.Generators.SettingGenerator" Collapsed="true">
+    <Position X="11" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAABAAAAAAAAAAABAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\SettingGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.SettingsDesignerGenerator" Collapsed="true">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generators\SettingsDesignerGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_CRUD_DesignPattern.Generators.SolutionGenerator" Collapsed="true">
+    <Position X="8.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAUAAABAAAAAAAAAAAAAA=</HashCode>
       <FileName>Generators\SolutionGenerator.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="SEP_CRUD_DesignPattern.Generators.IExport">
-    <Position X="7.5" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Generators\IExport.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

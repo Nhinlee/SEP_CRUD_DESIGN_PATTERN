@@ -28,11 +28,21 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\r\n\r\nnamespace ");
+            
+            #line 8 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n{\r\n    partial class ");
+            
+            #line 10 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
+            
+            #line default
+            #line hidden
             this.Write(@"
-
-namespace FormatFormToGenerate
-{
-    partial class GeneratorForm
     {
         /// <summary>
         /// Required designer variable.

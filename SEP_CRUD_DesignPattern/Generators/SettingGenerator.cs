@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace SEP_CRUD_DesignPattern.Generators
 {
-    class SettingGenerator : Generator
+    class SettingGenerator : FileGenerator
     {
-        public SettingGenerator()
+        public SettingGenerator(string relativePath)
         {
             this.Name = "Settings";
+            this.RelativePath = relativePath;
         }
         public override string GetFileName()
         {

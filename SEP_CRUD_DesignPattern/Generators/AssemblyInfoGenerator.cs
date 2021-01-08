@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace SEP_CRUD_DesignPattern.Generators
 {
-    class AssemblyInfoGenerator : Generator
+    class AssemblyInfoGenerator : FileGenerator
     {
         ProjectGenerator projectGenerator;
-        public AssemblyInfoGenerator(ProjectGenerator p)
+        public AssemblyInfoGenerator(ProjectGenerator p, string relativePath)
         {
             this.Name = "AssemblyInfo";
+            this.RelativePath = relativePath;
             this.projectGenerator = p;
         }
         public override string GetFileName()

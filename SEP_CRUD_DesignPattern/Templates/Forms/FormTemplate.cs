@@ -28,29 +28,30 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write(@"
-
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FormatFormToGenerate
-{
-    public partial class GeneratorForm : Form
-    {
-        public GeneratorForm()
-        {
-            InitializeComponent();
-        }
-    }
-}
-");
+            this.Write("\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.ComponentModel;\r" +
+                    "\nusing System.Data;\r\nusing System.Drawing;\r\nusing System.Linq;\r\nusing System.Tex" +
+                    "t;\r\nusing System.Threading.Tasks;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
+            
+            #line 17 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n{\r\n    public partial class ");
+            
+            #line 19 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" : Form\r\n    {\r\n        public ");
+            
+            #line 21 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+ Write(generator.Name); 
+            
+            #line default
+            #line hidden
+            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

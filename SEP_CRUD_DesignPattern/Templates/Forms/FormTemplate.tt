@@ -4,7 +4,6 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +14,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormatFormToGenerate
+namespace <#= generator.Namespace #>
 {
-    public partial class GeneratorForm : Form
+    public partial class <#= generator.Name #> : Form
     {
-        public GeneratorForm()
+        public <# Write(generator.Name); #>()
         {
             InitializeComponent();
         }

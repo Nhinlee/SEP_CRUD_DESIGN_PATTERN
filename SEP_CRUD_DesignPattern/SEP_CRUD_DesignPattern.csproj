@@ -53,10 +53,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Generators\AssemblyInfoGenerator.cs" />
-    <Compile Include="Generators\FileExporter.cs" />
-    <Compile Include="Generators\FolderExporter.cs" />
+    <Compile Include="Generators\FileGenerator.cs" />
+    <Compile Include="Generators\FormDesignerGenerator.cs" />
+    <Compile Include="Generators\FormGenerator.cs" />
     <Compile Include="Generators\Generator.cs" />
-    <Compile Include="Generators\IExport.cs" />
+    <Compile Include="Generators\GroupGenerator.cs" />
+    <Compile Include="Generators\ProgramGenerator.cs" />
     <Compile Include="Generators\ProjectGenerator.cs" />
     <Compile Include="Generators\SettingGenerator.cs" />
     <Compile Include="Generators\SettingsDesignerGenerator.cs" />
@@ -73,6 +75,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FormTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Forms\Template.cs" />
     <Compile Include="Templates\Project\ProgramTemplate.cs">
       <DependentUpon>ProgramTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>

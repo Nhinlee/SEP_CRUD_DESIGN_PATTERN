@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FormatFormToGenerate
+namespace <#= generator.Namespace #>
 {
     static class Program
     {
@@ -23,7 +23,7 @@ namespace FormatFormToGenerate
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new <#= generator.StartForm.Name #>());
         }
     }
 }

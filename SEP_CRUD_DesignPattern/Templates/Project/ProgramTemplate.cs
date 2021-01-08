@@ -28,15 +28,15 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing S" +
+                    "ystem.Threading.Tasks;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
+            
+            #line 14 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
+            
+            #line default
+            #line hidden
             this.Write(@"
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FormatFormToGenerate
 {
     static class Program
     {
@@ -48,11 +48,14 @@ namespace FormatFormToGenerate
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-        }
-    }
-}
-");
+            Application.Run(new ");
+            
+            #line 26 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.StartForm.Name));
+            
+            #line default
+            #line hidden
+            this.Write("());\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
