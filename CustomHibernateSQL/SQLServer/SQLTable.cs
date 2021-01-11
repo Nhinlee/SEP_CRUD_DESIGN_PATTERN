@@ -28,12 +28,12 @@ namespace CustomHibernateSQL.SQLServer
             List<AbstractColumn> keyColumns = new List<AbstractColumn>();
             foreach (var col in Columns)
             {
-                if (col.Flag == FieldFlags.PRIMARY_KEY)
+                if(col.Flag == FieldFlags.PRIMARY_KEY)
                 {
                     keyColumns.Add(col);
                 }
             }
-            for (int i = 0; i < keyColumns.Count; i++)
+            for(int i=0;i<keyColumns.Count;i++)
             {
                 sqlQuery.Append($"[{keyColumns[i].ColumnName}]=@p{i} AND ");
             }
@@ -55,7 +55,7 @@ namespace CustomHibernateSQL.SQLServer
             StringBuilder sqlQuery = new StringBuilder();
 
             sqlQuery.Append("SELECT ");
-            foreach (AbstractColumn col in Columns)
+            foreach(AbstractColumn col in Columns)
             {
                 sqlQuery.Append($"[{col.ColumnName}],");
             }
@@ -93,17 +93,17 @@ namespace CustomHibernateSQL.SQLServer
             int count = Columns.Count;
             string[] names = new string[count];
             string[] places = new string[count];
-            for (int i = 0; i < count; i++)
+            for(int i = 0; i < count; i++)
             {
                 var col = Columns[i];
                 names[i] = $"[{col.ColumnName}]";
-                places[i] = $"@p{i}";
+                places[i] = $"@p{i}";   
             }
             sqlQuery.Append($"INSERT INTO [{Schema}].[{TableName}] ({string.Join(",", names)}) VALUES({string.Join(",", places)})");
 
             // Setup Params-----------------------------------------------
             object[] parameters = new object[count];
-            for (int i = 0; i < count; i++)
+            for(int i = 0; i < count; i++)
             {
                 parameters[i] = Columns[i].GetValue(obj);
             }
@@ -124,7 +124,7 @@ namespace CustomHibernateSQL.SQLServer
             List<AbstractColumn> nonKeyColumns = new List<AbstractColumn>();
             foreach (var col in Columns)
             {
-                if (col.Flag == FieldFlags.PRIMARY_KEY)
+                if(col.Flag == FieldFlags.PRIMARY_KEY)
                 {
                     keyColumns.Add(col);
                 }

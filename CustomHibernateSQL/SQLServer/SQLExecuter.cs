@@ -80,7 +80,7 @@ namespace CustomHibernateSQL.SQLServer
 
         private void SetupCommandParameter(SqlCommand command, object[] parameters)
         {
-            for (int i = 0; i < parameters.Length; i++)
+            for(int i = 0; i < parameters.Length; i++)
             {
                 parameters[i] = parameters[i] ?? DBNull.Value;
                 command.Parameters.AddWithValue($"@p{i}", parameters[i]);
@@ -89,7 +89,7 @@ namespace CustomHibernateSQL.SQLServer
 
         private void Commit()
         {
-            if (transaction != null)
+            if(transaction != null)
             {
                 transaction.Commit();
                 transaction = null;
@@ -104,7 +104,7 @@ namespace CustomHibernateSQL.SQLServer
 
         private void OpenConnection()
         {
-            if (connection.State != ConnectionState.Open)
+            if(connection.State != ConnectionState.Open)
             {
                 connection.Open();
             }
@@ -112,7 +112,7 @@ namespace CustomHibernateSQL.SQLServer
 
         private void CloseConnection()
         {
-            if (connection.State != ConnectionState.Closed)
+            if(connection.State != ConnectionState.Closed)
             {
                 connection.Close();
             }

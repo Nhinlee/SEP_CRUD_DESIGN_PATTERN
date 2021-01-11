@@ -27,7 +27,7 @@ namespace CustomHibernateSQL.SQLServer
                 table.Columns.Add(col);
             }
 
-            return table;
+            return table; 
         }
     }
 }

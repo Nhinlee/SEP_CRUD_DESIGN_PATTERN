@@ -54,6 +54,8 @@
     <Compile Include="SQLServer\SQLConfig.cs" />
     <Compile Include="SQLServer\SQLDatabase.cs" />
     <Compile Include="SQLServer\SQLExecuter.cs" />
+    <Compile Include="SQLServer\SQLTable.cs" />
+    <Compile Include="SQLServer\SQLTableFactory.cs" />
     <Compile Include="TestingHibernateSQL\Employee.cs" />
     <Compile Include="TestingHibernateSQL\EmployeesDAO.cs" />
   </ItemGroup>
