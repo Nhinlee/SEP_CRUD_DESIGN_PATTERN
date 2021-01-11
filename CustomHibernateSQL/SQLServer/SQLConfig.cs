@@ -15,6 +15,6 @@ namespace CustomHibernateSQL.SQLServer
 
         }
 
-        public string ConnectionString { get; set; } = "Data Source=DESKTOP-1RVEUQ2;Initial Catalog=Testing;User ID=nhinlee;Password=.";
+        public string ConnectionString { get; set; } = "Data Source=ZEPHYS\\SQLEXPRESS;Initial Catalog=test;User ID=ngoc;Password=."; 
     }
 }
