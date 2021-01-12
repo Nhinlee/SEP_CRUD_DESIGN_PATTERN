@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30804.86
+VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomHibernateSQL", "CustomHibernateSQL\CustomHibernateSQL.csproj", "{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEP_CRUD_DesignPattern", "SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern.csproj", "{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEP_CRUD_DesignPattern", "SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern.csproj", "{3ED6554C-8153-43D4-BE88-A83196AE8AA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomHibernateSQL", "CustomHibernateSQL\CustomHibernateSQL.csproj", "{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9700EB82-9B9E-416F-BD80-C1F61C17C3F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3ED6554C-8153-43D4-BE88-A83196AE8AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3ED6554C-8153-43D4-BE88-A83196AE8AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3ED6554C-8153-43D4-BE88-A83196AE8AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3ED6554C-8153-43D4-BE88-A83196AE8AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B3D4CBE7-7E29-40ED-AA3A-0036AD1864B5}
+		SolutionGuid = {FC4D6486-5A1B-4FC8-908C-8B2F2AEC6573}
 	EndGlobalSection
 EndGlobal

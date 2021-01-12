@@ -18,7 +18,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class FormDesignerTemplate : FormDesignerTemplateBase
     {
@@ -30,14 +30,14 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
         {
             this.Write("\r\n\r\nnamespace ");
             
-            #line 8 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
+            #line 8 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    partial class ");
             
-            #line 10 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
+            #line 10 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default

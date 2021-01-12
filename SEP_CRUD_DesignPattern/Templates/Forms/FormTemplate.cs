@@ -18,7 +18,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class FormTemplate : FormTemplateBase
     {
@@ -32,21 +32,21 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
                     "\nusing System.Data;\r\nusing System.Drawing;\r\nusing System.Linq;\r\nusing System.Tex" +
                     "t;\r\nusing System.Threading.Tasks;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 17 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public partial class ");
             
-            #line 19 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+            #line 19 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
             this.Write(" : Form\r\n    {\r\n        public ");
             
-            #line 21 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+            #line 21 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
  Write(generator.Name); 
             
             #line default

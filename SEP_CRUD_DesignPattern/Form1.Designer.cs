@@ -1,5 +1,4 @@
-﻿
-namespace SEP_CRUD_DesignPattern
+﻿namespace SEP_CRUD_DesignPattern
 {
     partial class Form1
     {

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3ED6554C-8153-43D4-BE88-A83196AE8AA9}</ProjectGuid>
+    <ProjectGuid>{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SEP_CRUD_DesignPattern</RootNamespace>
     <AssemblyName>SEP_CRUD_DesignPattern</AssemblyName>
@@ -46,68 +46,85 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="DB\Column.cs" />
+    <Compile Include="DB\ConvertType.cs" />
+    <Compile Include="DB\DatabaseHolder.cs" />
+    <Compile Include="DB\DatabaseLoader.cs" />
+    <Compile Include="DB\DatabaseProperty.cs" />
+    <Compile Include="DB\NameConvention.cs" />
+    <Compile Include="DB\Table.cs" />
     <Compile Include="Generators\AssemblyInfoGenerator.cs" />
     <Compile Include="Generators\FileGenerator.cs" />
     <Compile Include="Generators\FormDesignerGenerator.cs" />
     <Compile Include="Generators\FormGenerator.cs" />
-    <Compile Include="Generators\Generator.cs" />
     <Compile Include="Generators\GroupGenerator.cs" />
+    <Compile Include="Generators\Generator.cs" />
     <Compile Include="Generators\ProgramGenerator.cs" />
     <Compile Include="Generators\ProjectGenerator.cs" />
     <Compile Include="Generators\SettingGenerator.cs" />
     <Compile Include="Generators\SettingsDesignerGenerator.cs" />
     <Compile Include="Generators\SolutionGenerator.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LoginDBForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDBForm.Designer.cs">
+      <DependentUpon>LoginDBForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectDBTableToGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectDBTableToGenerateForm.Designer.cs">
+      <DependentUpon>SelectDBTableToGenerateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Templates\Forms\FormDesignerTemplate.cs">
-      <DependentUpon>FormDesignerTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>FormDesignerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Forms\FormTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FormTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Forms\Template.cs" />
+    <Compile Include="Templates\Forms\Templates.cs" />
     <Compile Include="Templates\Project\ProgramTemplate.cs">
-      <DependentUpon>ProgramTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>ProgramTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Project\ProjectTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>ProjectTemplate.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Templates\Project\SolutionTemplate.cs">
-      <DependentUpon>SolutionTemplate.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Templates\Project\Templates.cs" />
     <Compile Include="Templates\Properties\AssemblyInfoTemplate.cs">
-      <DependentUpon>AssemblyInfoTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfoTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Properties\SettingsDesignerTemplate.cs">
-      <DependentUpon>SettingsDesignerTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>SettingsDesignerTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Properties\SettingTemplate.cs">
-      <DependentUpon>SettingTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>SettingTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Templates\Project\Templates.cs" />
+    <Compile Include="Templates\Project\SolutionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SolutionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates\Properties\Templates.cs" />
+    <Compile Include="Util\Constant.cs" />
+    <EmbeddedResource Include="LoginDBForm.resx">
+      <DependentUpon>LoginDBForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,6 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectDBTableToGenerateForm.resx">
+      <DependentUpon>SelectDBTableToGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Generators\GeneratorDiagram.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -131,6 +151,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Templates\Forms\FormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -148,10 +172,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ProjectTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Project\SolutionTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>SolutionTemplate.cs</LastGenOutput>
-    </Content>
     <Content Include="Templates\Properties\AssemblyInfoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AssemblyInfoTemplate.cs</LastGenOutput>
@@ -164,10 +184,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>SettingTemplate.cs</LastGenOutput>
     </Content>
+    <Content Include="Templates\Project\SolutionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SolutionTemplate.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

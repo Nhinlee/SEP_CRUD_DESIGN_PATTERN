@@ -18,7 +18,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Properties
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\Software Architecture\SEP_CRUD_DESIGN_PATTERN\SEP_CRUD_DesignPattern\Templates\Properties\SettingsDesignerTemplate.tt"
+    #line 1 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\SettingsDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class SettingsDesignerTemplate : SettingsDesignerTemplateBase
     {
