@@ -14,18 +14,18 @@ namespace <#= generator.Namespace #>
 
         // Singleton
         private static <#= generator.Name #> _instance = new <#= generator.Name #>();
-        private <#= generator.Name #>() { Init(); }
+        private <#= generator.Name #>() { ResetFactory(); }
 
         public static <#= generator.Name #> Instance { get => _instance; }
         //---------------------------------------------------------------
 
         private Dictionary<string, Form> tables = new Dictionary<string, Form>();
 
-        private void Init()
+        private void ResetFactory()
         {
-            //tables.Add("Employees", new ViewEmployeesTableForm());
-            //tables.Add("Persons", new ViewPersonsTableForm());
+            tables.Clear();
             <#
+            WriteLine("");
 
             for(int i=0; i<generator.Tables.Count; i++)
             {
@@ -37,6 +37,7 @@ namespace <#= generator.Namespace #>
 
         public Form GetViewTableForm(string tableName)
         {
+            ResetFactory();
             if (tables.ContainsKey(tableName))
             {
                 return tables[tableName];

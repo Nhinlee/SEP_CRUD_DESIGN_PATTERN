@@ -63,7 +63,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             
             #line default
             #line hidden
-            this.Write("() { Init(); }\r\n\r\n        public static ");
+            this.Write("() { ResetFactory(); }\r\n\r\n        public static ");
             
             #line 19 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
@@ -75,14 +75,14 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
 
         private Dictionary<string, Form> tables = new Dictionary<string, Form>();
 
-        private void Init()
+        private void ResetFactory()
         {
-            //tables.Add(""Employees"", new ViewEmployeesTableForm());
-            //tables.Add(""Persons"", new ViewPersonsTableForm());
+            tables.Clear();
             ");
             
-            #line 28 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
+            #line 27 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
 
+            WriteLine("");
 
             for(int i=0; i<generator.Tables.Count; i++)
             {
@@ -93,10 +93,20 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             
             #line default
             #line hidden
-            this.Write("        }\r\n\r\n        public Form GetViewTableForm(string tableName)\r\n        {\r\n " +
-                    "           if (tables.ContainsKey(tableName))\r\n            {\r\n                re" +
-                    "turn tables[tableName];\r\n            }\r\n            return null;\r\n        }\r\n   " +
-                    " }\r\n}\r\n");
+            this.Write(@"        }
+
+        public Form GetViewTableForm(string tableName)
+        {
+            ResetFactory();
+            if (tables.ContainsKey(tableName))
+            {
+                return tables[tableName];
+            }
+            return null;
+        }
+    }
+}
+");
             return this.GenerationEnvironment.ToString();
         }
     }
