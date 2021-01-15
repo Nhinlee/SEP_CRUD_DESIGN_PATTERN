@@ -6,7 +6,7 @@
 
 namespace <#= generator.Namespace #>
 {
-    partial class <#= generator.Name #><E>
+    partial class <#= generator.Name #>
     {
         /// <summary>
         /// Required designer variable.

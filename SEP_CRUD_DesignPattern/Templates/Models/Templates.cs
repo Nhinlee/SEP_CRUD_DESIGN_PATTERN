@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SEP_CRUD_DesignPattern.Generators.Models;
 
 namespace SEP_CRUD_DesignPattern.Templates.Models
@@ -20,6 +17,15 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
     {
         private ModelDaoGenerator generator;
         public ModelDaoTemplate(ModelDaoGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class DatabaseLoaderTemplate
+    {
+        private DatabaseLoaderGenerator generator;
+        public DatabaseLoaderTemplate(DatabaseLoaderGenerator g)
         {
             this.generator = g;
         }

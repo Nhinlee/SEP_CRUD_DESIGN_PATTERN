@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using SEP_CRUD_DesignPattern.Util;
 
@@ -15,7 +12,7 @@ namespace SEP_CRUD_DesignPattern.DB
         private DatabaseLoader() { }
         public static DatabaseLoader Instance { get => _instance ; }
         // -------------------------------------------------------------
-
+        
         // Private Fields
         private SqlConnection connection;
         private SqlCommand command;

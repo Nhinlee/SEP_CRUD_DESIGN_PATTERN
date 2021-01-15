@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using SEP_CRUD_DesignPattern.DB;
 using SEP_CRUD_DesignPattern.Generators;
 using SEP_CRUD_DesignPattern.Generators.Models;
 using SEP_CRUD_DesignPattern.Generators.Helpers;
+using SEP_CRUD_DesignPattern.Generators.Forms;
+using System.IO;
 
 namespace SEP_CRUD_DesignPattern
 {
@@ -82,10 +81,19 @@ namespace SEP_CRUD_DesignPattern
             NamespaceHelper.Instance.ProjectNamespace = project1.Name;
 
             // Generate Form
-            FormGenerator form1 = new FormGenerator("generateForm", project1.Name, "");
-            FormDesignerGenerator form1Designer = new FormDesignerGenerator(form1);
-            // Generate Program
-            ProgramGenerator program = new ProgramGenerator(project1.Name, form1);
+            LoginFormGenerator loginForm = new LoginFormGenerator();
+            LoginFormDesignerGenerator loginFormDesigner = new LoginFormDesignerGenerator(loginForm);
+
+            ViewListTableFormGenerator viewListTableForm = new ViewListTableFormGenerator();
+            ViewListTableFormDesignerGenerator viewListTableFormDesigner = new ViewListTableFormDesignerGenerator(viewListTableForm);
+
+            ViewTableFormGenerator viewTableForm = new ViewTableFormGenerator();
+            ViewTableFormDesignerGenerator viewTableFormDesigner = new ViewTableFormDesignerGenerator(viewTableForm);
+
+            // Generate Class
+            DatabaseLoaderGenerator dbLoader = new DatabaseLoaderGenerator(tables, DatabaseLoader.Instance.ConnectionStringBuilder);
+            ProgramGenerator program = new ProgramGenerator(loginForm);
+
             // Generate Model
             foreach (var table in tables)
             {
@@ -95,14 +103,41 @@ namespace SEP_CRUD_DesignPattern
                 project1.Add(modelGen);
                 project1.Add(modelDaoGen);
             }
-            // Add to project and solution
-            project1.Add(form1);
-            project1.Add(form1Designer);
-            project1.Add(program);
-            solution.Add(project1);
 
+            //-------------------------------------------------------------------------------------------------
+            // Add to project and solution
+            project1.Add(dbLoader);
+            project1.Add(program);
+
+            project1.Add(loginForm);
+            project1.Add(loginFormDesigner);
+
+            project1.Add(viewListTableForm);
+            project1.Add(viewListTableFormDesigner);
+
+            project1.Add(viewTableForm);
+            project1.Add(viewTableFormDesigner);
+
+            solution.Add(project1);
             solution.ExportToFile(projectInfo.Path);
+            // Copy Custom Hibernate SQL to Generated Project
+            CopyHibernateSQLToProject(projectInfo.SolutionPath, project1.Name);
+
             Close();
+        }
+
+        private void CopyHibernateSQLToProject(string solutionPath, string projectName)
+        {
+            // TODO: Refactor this hard code
+            string fileName = "CustomHibernateSQL.dll";
+            string srcPath = Path.Combine("orm", fileName);
+            string destPath = Path.Combine(solutionPath, projectName, "orm");
+            string destFilePath = Path.Combine(destPath, fileName);
+
+            Directory.CreateDirectory(destPath);
+            File.Create(destFilePath).Dispose();
+
+            File.Copy(srcPath, destFilePath, true);
         }
     }
 

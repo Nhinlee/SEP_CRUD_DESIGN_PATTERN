@@ -1,28 +1,62 @@
-﻿using SEP_CRUD_DesignPattern.Generators;
+﻿using SEP_CRUD_DesignPattern.Generators.Forms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace SEP_CRUD_DesignPattern.Templates.Forms
 {
-    partial class FormTemplate
+    partial class LoginFormDesignerTemplate
     {
-        FormGenerator generator;
-        public FormTemplate(FormGenerator f)
+        private LoginFormDesignerGenerator generator;
+        public LoginFormDesignerTemplate(LoginFormDesignerGenerator g)
         {
-            generator = f;
+            generator = g;
         }
     }
 
-    partial class FormDesignerTemplate
+    partial class LoginFormTemplate
     {
-
-        FormDesignerGenerator generator;
-        public FormDesignerTemplate(FormDesignerGenerator f)
+        private LoginFormGenerator generator;
+        public LoginFormTemplate(LoginFormGenerator g)
         {
-            this.generator = f;
+            generator = g;
+        }
+    }
+
+    partial class ViewListTableFormDesignerTemplate
+    {
+        private ViewListTableFormDesignerGenerator generator;
+        public ViewListTableFormDesignerTemplate(ViewListTableFormDesignerGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class ViewListTableFormTemplate
+    {
+        private ViewListTableFormGenerator generator;
+        public ViewListTableFormTemplate(ViewListTableFormGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class ViewTableFormTemplate
+    {
+        private ViewTableFormGenerator generator;
+        public ViewTableFormTemplate(ViewTableFormGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class ViewTableFormDesignerTemplate
+    {
+        private ViewTableFormDesignerGenerator generator;
+        public ViewTableFormDesignerTemplate(ViewTableFormDesignerGenerator g)
+        {
+            this.generator = g;
         }
     }
 }

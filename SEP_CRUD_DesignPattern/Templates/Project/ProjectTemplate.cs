@@ -68,15 +68,18 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
                     " <DebugType>pdbonly</DebugType>\r\n    <Optimize>true</Optimize>\r\n    <OutputPath>" +
                     "bin\\Release\\</OutputPath>\r\n    <DefineConstants>TRACE</DefineConstants>\r\n    <Er" +
                     "rorReport>prompt</ErrorReport>\r\n    <WarningLevel>4</WarningLevel>\r\n  </Property" +
-                    "Group>\r\n  <ItemGroup>\r\n    <Reference Include=\"System\" />\r\n    <Reference Includ" +
-                    "e=\"System.Core\" />\r\n    <Reference Include=\"System.Xml.Linq\" />\r\n    <Reference " +
-                    "Include=\"System.Data.DataSetExtensions\" />\r\n    <Reference Include=\"Microsoft.CS" +
-                    "harp\" />\r\n    <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"Syste" +
-                    "m.Deployment\" />\r\n    <Reference Include=\"System.Drawing\" />\r\n    <Reference Inc" +
-                    "lude=\"System.Net.Http\" />\r\n    <Reference Include=\"System.Windows.Forms\" />\r\n   " +
-                    " <Reference Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n  ");
+                    "Group>\r\n  <ItemGroup>\r\n    <Reference Include=\"CustomHibernateSQL, Version=1.0.0" +
+                    ".0, Culture=neutral, processorArchitecture=MSIL\">\r\n      <SpecificVersion>False<" +
+                    "/SpecificVersion>\r\n      <HintPath>orm\\CustomHibernateSQL.dll</HintPath>\r\n    </" +
+                    "Reference>\r\n    <Reference Include=\"System\" />\r\n    <Reference Include=\"System.C" +
+                    "ore\" />\r\n    <Reference Include=\"System.Xml.Linq\" />\r\n    <Reference Include=\"Sy" +
+                    "stem.Data.DataSetExtensions\" />\r\n    <Reference Include=\"Microsoft.CSharp\" />\r\n " +
+                    "   <Reference Include=\"System.Data\" />\r\n    <Reference Include=\"System.Deploymen" +
+                    "t\" />\r\n    <Reference Include=\"System.Drawing\" />\r\n    <Reference Include=\"Syste" +
+                    "m.Net.Http\" />\r\n    <Reference Include=\"System.Windows.Forms\" />\r\n    <Reference" +
+                    " Include=\"System.Xml\" />\r\n  </ItemGroup>\r\n  <ItemGroup>\r\n  ");
             
-            #line 54 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProjectTemplate.tt"
+            #line 58 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProjectTemplate.tt"
 
       List<string> list = GetCompileItems();
 	    int count = list.Count;
@@ -100,7 +103,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
 
         ");
             
-            #line 72 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProjectTemplate.tt"
+            #line 76 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProjectTemplate.tt"
 
         /*
         <Compile Include="Form1.cs">
@@ -125,8 +128,9 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
             
             #line default
             #line hidden
-            this.Write("  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targets\" " +
-                    "/>\r\n</Project>");
+            this.Write("  </ItemGroup>\r\n  <ItemGroup>\r\n    <Content Include=\"orm\\CustomHibernateSQL.dll\" " +
+                    "/>\r\n  </ItemGroup>\r\n  <Import Project=\"$(MSBuildToolsPath)\\Microsoft.CSharp.targ" +
+                    "ets\" />\r\n</Project>");
             return this.GenerationEnvironment.ToString();
         }
     }

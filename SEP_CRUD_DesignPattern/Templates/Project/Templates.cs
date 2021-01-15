@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SEP_CRUD_DesignPattern.Generators;
+using SEP_CRUD_DesignPattern.Generators.Bases;
 
 namespace SEP_CRUD_DesignPattern.Templates.Project
 {
@@ -28,11 +29,11 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
                 {
                     items.Add($"<Compile Include=\"{path}\"><SubType>Form</SubType></Compile>");
                 }
-                else if(files[i] is FormDesignerGenerator)
+                else if (files[i] is FormDesignerGenerator)
                 {
-                    items.Add("<Compile Include=\""+ path +"\"><DependentUpon>"+ (files[i] as FormDesignerGenerator).FormOwner.GetFileName() +"</DependentUpon></Compile>");
+                    items.Add("<Compile Include=\"" + path + "\"><DependentUpon>" + (files[i] as FormDesignerGenerator).FormOwner.GetFileName() + "</DependentUpon></Compile>");
                 }
-                else if(files[i] is ProgramGenerator)
+                else if (files[i] is ClassGenerator || files[i] is ProgramGenerator)
                 {
                     items.Add($"<Compile Include=\"{path}\" />");
                 }
