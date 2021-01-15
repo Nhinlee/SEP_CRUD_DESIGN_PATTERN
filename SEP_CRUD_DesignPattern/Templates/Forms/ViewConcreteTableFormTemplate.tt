@@ -1,0 +1,47 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD_DesignPattern.Generators.Helpers" #>
+
+using System.Windows.Forms;
+using System;
+using System.Collections.Generic;
+using <#= NamespaceHelper.Instance.ModelsNamespace #>;
+
+namespace <#= generator.Namespace #>
+{
+    public partial class <#= generator.Name #> : <#= generator.BaseForm.Name #><<#= generator.Table.Name #>>
+    {
+        public <#= generator.Name #>()
+        {
+            InitializeComponent();
+        }
+
+        protected override List<<#= generator.Table.Name #>> GetData()
+        {
+            return <#= generator.Table.Name #>DAO.Instance().GetAll();
+        }
+
+        protected override void Delete(<#= generator.Table.Name #> item)
+        {
+            var dialogResult = MessageBox.Show("Are you sure to delete this item?", "Warning", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if(dialogResult == DialogResult.Yes)
+            {
+                <#= generator.Table.Name #>DAO.Instance().Delete(item);
+            }
+        }
+
+        protected override void Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void Update(<#= generator.Table.Name #> item)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

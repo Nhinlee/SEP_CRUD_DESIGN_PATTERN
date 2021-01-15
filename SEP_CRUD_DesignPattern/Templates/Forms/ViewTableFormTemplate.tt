@@ -11,11 +11,57 @@ using System.Windows.Forms;
 
 namespace <#= generator.Namespace #>
 {
-    public partial class <#= generator.Name #> : Form
+    public abstract partial class <#= generator.Name #><E> : Form
     {
+        protected BindingList<E> bindingList;
+
         public <#= generator.Name #>()
         {
             InitializeComponent();
+
+            // Fetch Data
+            RefreshData();
+
+            // Event Handler
+            this.btnAdd.Click += btnAdd_Click;
+            this.btnUpdate.Click += btnUpdate_Click;
+            this.btnDelete.Click += btnDelete_Click;
         }
+
+        // Event Handler
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            E item = (E)dgvTable.CurrentRow.DataBoundItem;
+            Delete(item);
+            RefreshData();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            E item = (E)dgvTable.CurrentRow.DataBoundItem;
+            Update(item);
+            RefreshData();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Add();
+            RefreshData();
+        }
+
+        // Abstract methods
+        protected abstract List<E> GetData();
+        protected abstract void Add();
+        protected abstract void Update(E item);
+        protected abstract void Delete(E item);
+
+        // Private methods
+        protected void RefreshData()
+        {
+            List<E> list = GetData();
+            bindingList = new BindingList<E>(list);
+            dgvTable.DataSource = bindingList;
+        }
+
     }
 }

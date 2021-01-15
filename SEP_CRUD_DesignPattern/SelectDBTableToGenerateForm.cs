@@ -69,39 +69,46 @@ namespace SEP_CRUD_DesignPattern
         {
             // DESKTOP-1RVEUQ2
             // Get list table is selected to generate
-            List<Table> tables = listBoxDBTable.SelectedItems.Cast<Table>().ToList();
+            var tables = listBoxDBTable.SelectedItems.Cast<Table>().ToList();
 
             // Get project information to generate
-            ProjectInfo projectInfo = bindingSourceProjectInfo.Current as ProjectInfo;
+            var projectInfo = bindingSourceProjectInfo.Current as ProjectInfo;
             if (!projectInfo.IsOKToGenerate()) return;
 
             // Start Generate Project
-            SolutionGenerator solution = new SolutionGenerator(projectInfo.SolutionName);
-            ProjectGenerator project1 = new ProjectGenerator(projectInfo.ProjectName);
+            var solution = new SolutionGenerator(projectInfo.SolutionName);
+            var project1 = new ProjectGenerator(projectInfo.ProjectName);
             NamespaceHelper.Instance.ProjectNamespace = project1.Name;
 
             // Generate Form
-            LoginFormGenerator loginForm = new LoginFormGenerator();
-            LoginFormDesignerGenerator loginFormDesigner = new LoginFormDesignerGenerator(loginForm);
+            var loginForm = new LoginFormGenerator();
+            var loginFormDesigner = new LoginFormDesignerGenerator(loginForm);
 
-            ViewListTableFormGenerator viewListTableForm = new ViewListTableFormGenerator();
-            ViewListTableFormDesignerGenerator viewListTableFormDesigner = new ViewListTableFormDesignerGenerator(viewListTableForm);
+            var viewListTableForm = new ViewListTableFormGenerator();
+            var viewListTableFormDesigner = new ViewListTableFormDesignerGenerator(viewListTableForm);
 
-            ViewTableFormGenerator viewTableForm = new ViewTableFormGenerator();
-            ViewTableFormDesignerGenerator viewTableFormDesigner = new ViewTableFormDesignerGenerator(viewTableForm);
+            var viewTableForm = new ViewTableFormGenerator();
+            var viewTableFormDesigner = new ViewTableFormDesignerGenerator(viewTableForm);
 
             // Generate Class
-            DatabaseLoaderGenerator dbLoader = new DatabaseLoaderGenerator(tables, DatabaseLoader.Instance.ConnectionStringBuilder);
-            ProgramGenerator program = new ProgramGenerator(loginForm);
+            var dbLoader = new DatabaseLoaderGenerator(tables, DatabaseLoader.Instance.ConnectionStringBuilder);
+            var program = new ProgramGenerator(viewListTableForm);
 
             // Generate Model
             foreach (var table in tables)
             {
-                ModelGenerator modelGen = new ModelGenerator(table);
-                ModelDaoGenerator modelDaoGen = new ModelDaoGenerator(table);
+                // Generate Model
+                var modelGen = new ModelGenerator(table);
+                var modelDaoGen = new ModelDaoGenerator(table);
+
+                // Generate View Table Form
+                var viewConcreteTableForm = new ViewConcreteTableFormGenerator(table, viewTableForm);
+                var viewConreteTableFormDesigner = new ViewConcreteTableFormDesignerGenerator(table.Name, viewConcreteTableForm);
 
                 project1.Add(modelGen);
                 project1.Add(modelDaoGen);
+                project1.Add(viewConcreteTableForm);
+                project1.Add(viewConreteTableFormDesigner);
             }
 
             //-------------------------------------------------------------------------------------------------

@@ -59,4 +59,22 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             this.generator = g;
         }
     }
+
+    partial class ViewConcreteTableFormTemplate
+    {
+        private ViewConcreteTableFormGenerator generator;
+        public ViewConcreteTableFormTemplate(ViewConcreteTableFormGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class ViewConcreteTableFormDesignerTemplate
+    {
+        private ViewConcreteTableFormDesignerGenerator generator;
+        public ViewConcreteTableFormDesignerTemplate(ViewConcreteTableFormDesignerGenerator g)
+        {
+            this.generator = g;
+        }
+    }
 }

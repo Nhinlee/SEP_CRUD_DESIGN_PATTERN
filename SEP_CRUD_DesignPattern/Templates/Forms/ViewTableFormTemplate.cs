@@ -36,21 +36,72 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n    public partial class ");
+            this.Write("\r\n{\r\n    public abstract partial class ");
             
             #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write(" : Form\r\n    {\r\n        public ");
+            this.Write("<E> : Form\r\n    {\r\n        protected BindingList<E> bindingList;\r\n\r\n        publi" +
+                    "c ");
             
-            #line 16 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormTemplate.tt"
+            #line 18 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n    }\r\n}\r\n");
+            this.Write(@"()
+        {
+            InitializeComponent();
+
+            // Fetch Data
+            RefreshData();
+
+            // Event Handler
+            this.btnAdd.Click += btnAdd_Click;
+            this.btnUpdate.Click += btnUpdate_Click;
+            this.btnDelete.Click += btnDelete_Click;
+        }
+
+        // Event Handler
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            E item = (E)dgvTable.CurrentRow.DataBoundItem;
+            Delete(item);
+            RefreshData();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            E item = (E)dgvTable.CurrentRow.DataBoundItem;
+            Update(item);
+            RefreshData();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Add();
+            RefreshData();
+        }
+
+        // Abstract methods
+        protected abstract List<E> GetData();
+        protected abstract void Add();
+        protected abstract void Update(E item);
+        protected abstract void Delete(E item);
+
+        // Private methods
+        protected void RefreshData()
+        {
+            List<E> list = GetData();
+            bindingList = new BindingList<E>(list);
+            dgvTable.DataSource = bindingList;
+        }
+
+    }
+}
+");
             return this.GenerationEnvironment.ToString();
         }
     }

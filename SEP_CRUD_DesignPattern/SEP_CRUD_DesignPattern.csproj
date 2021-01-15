@@ -66,6 +66,8 @@
     <Compile Include="Generators\Bases\FormGenerator.cs" />
     <Compile Include="Generators\Bases\GroupGenerator.cs" />
     <Compile Include="Generators\Bases\Generator.cs" />
+    <Compile Include="Generators\Forms\ViewConcreteTableFormDesignerGenerator.cs" />
+    <Compile Include="Generators\Forms\ViewConcreteTableFormGenerator.cs" />
     <Compile Include="Generators\Forms\ViewListTableFormDesignerGenerator.cs" />
     <Compile Include="Generators\Forms\ViewTableFormDesignerGenerator.cs" />
     <Compile Include="Generators\Forms\ViewTableFormGenerator.cs" />
@@ -104,6 +106,16 @@
       <DependentUpon>LoginFormTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Forms\Templates.cs" />
+    <Compile Include="Templates\Forms\ViewConcreteTableFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewConcreteTableFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Forms\ViewConcreteTableFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewConcreteTableFormTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\Forms\ViewListTableFormDesignerTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +231,14 @@
     <Content Include="Templates\Forms\LoginFormTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>LoginFormTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Forms\ViewConcreteTableFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewConcreteTableFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Forms\ViewConcreteTableFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewConcreteTableFormTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Templates\Forms\ViewListTableFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

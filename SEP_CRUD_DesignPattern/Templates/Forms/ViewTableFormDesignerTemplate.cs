@@ -42,59 +42,59 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             
             #line default
             #line hidden
-            this.Write("\r\n    {\r\n        /// <summary>\r\n        /// Required designer variable.\r\n        " +
-                    "/// </summary>\r\n        private System.ComponentModel.IContainer components = nu" +
-                    "ll;\r\n\r\n        /// <summary>\r\n        /// Clean up any resources being used.\r\n  " +
-                    "      /// </summary>\r\n        /// <param name=\"disposing\">true if managed resour" +
-                    "ces should be disposed; otherwise, false.</param>\r\n        protected override vo" +
-                    "id Dispose(bool disposing)\r\n        {\r\n            if (disposing && (components " +
-                    "!= null))\r\n            {\r\n                components.Dispose();\r\n            }\r\n" +
-                    "            base.Dispose(disposing);\r\n        }\r\n\r\n        #region Windows Form " +
-                    "Designer generated code\r\n\r\n        /// <summary>\r\n        /// Required method fo" +
-                    "r Designer support - do not modify\r\n        /// the contents of this method with" +
-                    " the code editor.\r\n        /// </summary>\r\n        private void InitializeCompon" +
-                    "ent()\r\n        {\r\n            this.btnAdd = new System.Windows.Forms.Button();\r\n" +
-                    "            this.btnUpdate = new System.Windows.Forms.Button();\r\n            thi" +
-                    "s.btnDelete = new System.Windows.Forms.Button();\r\n            this.dgvTable = ne" +
-                    "w System.Windows.Forms.DataGridView();\r\n            ((System.ComponentModel.ISup" +
-                    "portInitialize)(this.dgvTable)).BeginInit();\r\n            this.SuspendLayout();\r" +
-                    "\n            // \r\n            // btnAdd\r\n            // \r\n            this.btnAd" +
-                    "d.Location = new System.Drawing.Point(12, 12);\r\n            this.btnAdd.Name = \"" +
-                    "btnAdd\";\r\n            this.btnAdd.Size = new System.Drawing.Size(98, 33);\r\n     " +
-                    "       this.btnAdd.TabIndex = 0;\r\n            this.btnAdd.Text = \"Add New\";\r\n   " +
-                    "         this.btnAdd.UseVisualStyleBackColor = true;\r\n            // \r\n         " +
-                    "   // btnUpdate\r\n            // \r\n            this.btnUpdate.Location = new Syst" +
-                    "em.Drawing.Point(116, 12);\r\n            this.btnUpdate.Name = \"btnUpdate\";\r\n    " +
-                    "        this.btnUpdate.Size = new System.Drawing.Size(98, 33);\r\n            this" +
-                    ".btnUpdate.TabIndex = 1;\r\n            this.btnUpdate.Text = \"Update\";\r\n         " +
-                    "   this.btnUpdate.UseVisualStyleBackColor = true;\r\n            // \r\n            " +
-                    "// btnDelete\r\n            // \r\n            this.btnDelete.Location = new System." +
-                    "Drawing.Point(220, 12);\r\n            this.btnDelete.Name = \"btnDelete\";\r\n       " +
-                    "     this.btnDelete.Size = new System.Drawing.Size(98, 33);\r\n            this.bt" +
-                    "nDelete.TabIndex = 2;\r\n            this.btnDelete.Text = \"Delete\";\r\n            " +
-                    "this.btnDelete.UseVisualStyleBackColor = true;\r\n            // \r\n            // " +
-                    "dgvTable\r\n            // \r\n            this.dgvTable.AllowUserToAddRows = false;" +
-                    "\r\n            this.dgvTable.AllowUserToDeleteRows = false;\r\n            this.dgv" +
-                    "Table.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode" +
-                    ".Fill;\r\n            this.dgvTable.BackgroundColor = System.Drawing.Color.White;\r" +
-                    "\n            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.Da" +
-                    "taGridViewColumnHeadersHeightSizeMode.AutoSize;\r\n            this.dgvTable.Locat" +
-                    "ion = new System.Drawing.Point(12, 61);\r\n            this.dgvTable.Name = \"dgvTa" +
-                    "ble\";\r\n            this.dgvTable.RowHeadersWidth = 51;\r\n            this.dgvTabl" +
-                    "e.RowTemplate.Height = 24;\r\n            this.dgvTable.Size = new System.Drawing." +
-                    "Size(1079, 485);\r\n            this.dgvTable.TabIndex = 3;\r\n            // \r\n    " +
-                    "        // ViewTableForm\r\n            // \r\n            this.AutoScaleDimensions " +
-                    "= new System.Drawing.SizeF(8F, 16F);\r\n            this.AutoScaleMode = System.Wi" +
-                    "ndows.Forms.AutoScaleMode.Font;\r\n            this.ClientSize = new System.Drawin" +
-                    "g.Size(1133, 558);\r\n            this.Controls.Add(this.dgvTable);\r\n            t" +
-                    "his.Controls.Add(this.btnDelete);\r\n            this.Controls.Add(this.btnUpdate)" +
-                    ";\r\n            this.Controls.Add(this.btnAdd);\r\n            this.Name = \"ViewTab" +
-                    "leForm\";\r\n            this.Text = \"ViewTableForm\";\r\n            ((System.Compone" +
-                    "ntModel.ISupportInitialize)(this.dgvTable)).EndInit();\r\n            this.ResumeL" +
-                    "ayout(false);\r\n\r\n        }\r\n\r\n        #endregion\r\n\r\n        private System.Windo" +
-                    "ws.Forms.Button btnAdd;\r\n        private System.Windows.Forms.Button btnUpdate;\r" +
-                    "\n        private System.Windows.Forms.Button btnDelete;\r\n        private System." +
-                    "Windows.Forms.DataGridView dgvTable;\r\n    }\r\n}");
+            this.Write("<E>\r\n    {\r\n        /// <summary>\r\n        /// Required designer variable.\r\n     " +
+                    "   /// </summary>\r\n        private System.ComponentModel.IContainer components =" +
+                    " null;\r\n\r\n        /// <summary>\r\n        /// Clean up any resources being used.\r" +
+                    "\n        /// </summary>\r\n        /// <param name=\"disposing\">true if managed res" +
+                    "ources should be disposed; otherwise, false.</param>\r\n        protected override" +
+                    " void Dispose(bool disposing)\r\n        {\r\n            if (disposing && (componen" +
+                    "ts != null))\r\n            {\r\n                components.Dispose();\r\n            " +
+                    "}\r\n            base.Dispose(disposing);\r\n        }\r\n\r\n        #region Windows Fo" +
+                    "rm Designer generated code\r\n\r\n        /// <summary>\r\n        /// Required method" +
+                    " for Designer support - do not modify\r\n        /// the contents of this method w" +
+                    "ith the code editor.\r\n        /// </summary>\r\n        private void InitializeCom" +
+                    "ponent()\r\n        {\r\n            this.btnAdd = new System.Windows.Forms.Button()" +
+                    ";\r\n            this.btnUpdate = new System.Windows.Forms.Button();\r\n            " +
+                    "this.btnDelete = new System.Windows.Forms.Button();\r\n            this.dgvTable =" +
+                    " new System.Windows.Forms.DataGridView();\r\n            ((System.ComponentModel.I" +
+                    "SupportInitialize)(this.dgvTable)).BeginInit();\r\n            this.SuspendLayout(" +
+                    ");\r\n            // \r\n            // btnAdd\r\n            // \r\n            this.bt" +
+                    "nAdd.Location = new System.Drawing.Point(12, 12);\r\n            this.btnAdd.Name " +
+                    "= \"btnAdd\";\r\n            this.btnAdd.Size = new System.Drawing.Size(98, 33);\r\n  " +
+                    "          this.btnAdd.TabIndex = 0;\r\n            this.btnAdd.Text = \"Add New\";\r\n" +
+                    "            this.btnAdd.UseVisualStyleBackColor = true;\r\n            // \r\n      " +
+                    "      // btnUpdate\r\n            // \r\n            this.btnUpdate.Location = new S" +
+                    "ystem.Drawing.Point(116, 12);\r\n            this.btnUpdate.Name = \"btnUpdate\";\r\n " +
+                    "           this.btnUpdate.Size = new System.Drawing.Size(98, 33);\r\n            t" +
+                    "his.btnUpdate.TabIndex = 1;\r\n            this.btnUpdate.Text = \"Update\";\r\n      " +
+                    "      this.btnUpdate.UseVisualStyleBackColor = true;\r\n            // \r\n         " +
+                    "   // btnDelete\r\n            // \r\n            this.btnDelete.Location = new Syst" +
+                    "em.Drawing.Point(220, 12);\r\n            this.btnDelete.Name = \"btnDelete\";\r\n    " +
+                    "        this.btnDelete.Size = new System.Drawing.Size(98, 33);\r\n            this" +
+                    ".btnDelete.TabIndex = 2;\r\n            this.btnDelete.Text = \"Delete\";\r\n         " +
+                    "   this.btnDelete.UseVisualStyleBackColor = true;\r\n            // \r\n            " +
+                    "// dgvTable\r\n            // \r\n            this.dgvTable.AllowUserToAddRows = fal" +
+                    "se;\r\n            this.dgvTable.AllowUserToDeleteRows = false;\r\n            this." +
+                    "dgvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsM" +
+                    "ode.Fill;\r\n            this.dgvTable.BackgroundColor = System.Drawing.Color.Whit" +
+                    "e;\r\n            this.dgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms" +
+                    ".DataGridViewColumnHeadersHeightSizeMode.AutoSize;\r\n            this.dgvTable.Lo" +
+                    "cation = new System.Drawing.Point(12, 61);\r\n            this.dgvTable.Name = \"dg" +
+                    "vTable\";\r\n            this.dgvTable.RowHeadersWidth = 51;\r\n            this.dgvT" +
+                    "able.RowTemplate.Height = 24;\r\n            this.dgvTable.Size = new System.Drawi" +
+                    "ng.Size(1079, 485);\r\n            this.dgvTable.TabIndex = 3;\r\n            // \r\n " +
+                    "           // ViewTableForm\r\n            // \r\n            this.AutoScaleDimensio" +
+                    "ns = new System.Drawing.SizeF(8F, 16F);\r\n            this.AutoScaleMode = System" +
+                    ".Windows.Forms.AutoScaleMode.Font;\r\n            this.ClientSize = new System.Dra" +
+                    "wing.Size(1133, 558);\r\n            this.Controls.Add(this.dgvTable);\r\n          " +
+                    "  this.Controls.Add(this.btnDelete);\r\n            this.Controls.Add(this.btnUpda" +
+                    "te);\r\n            this.Controls.Add(this.btnAdd);\r\n            this.Name = \"View" +
+                    "TableForm\";\r\n            this.Text = \"ViewTableForm\";\r\n            ((System.Comp" +
+                    "onentModel.ISupportInitialize)(this.dgvTable)).EndInit();\r\n            this.Resu" +
+                    "meLayout(false);\r\n\r\n        }\r\n\r\n        #endregion\r\n\r\n        private System.Wi" +
+                    "ndows.Forms.Button btnAdd;\r\n        private System.Windows.Forms.Button btnUpdat" +
+                    "e;\r\n        private System.Windows.Forms.Button btnDelete;\r\n        private Syst" +
+                    "em.Windows.Forms.DataGridView dgvTable;\r\n    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -35,7 +35,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n    class ");
+            this.Write("\r\n{\r\n    public class ");
             
             #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelDaoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));

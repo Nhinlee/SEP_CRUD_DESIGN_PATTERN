@@ -7,21 +7,21 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD_DesignPattern.Templates.Models
+namespace SEP_CRUD_DesignPattern.Templates.Forms
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using SEP_CRUD_DesignPattern.DB;
+    using SEP_CRUD_DesignPattern.Generators.Helpers;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ModelTemplate : ModelTemplateBase
+    public partial class ViewConcreteTableFormTemplate : ViewConcreteTableFormTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,51 +29,95 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing System;\r\nusing CustomHibernateSQL.Attributes;\r\n\r\nnamespace ");
+            this.Write("\r\nusing System.Windows.Forms;\r\nusing System;\r\nusing System.Collections.Generic;\r\n" +
+                    "using ");
             
-            #line 11 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
+            #line 11 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(NamespaceHelper.Instance.ModelsNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\r\nnamespace ");
+            
+            #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n    [Table(\"");
+            this.Write("\r\n{\r\n    public partial class ");
             
-            #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.DatabaseName));
+            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write("\", \"dbo\")]\r\n    public class ");
+            this.Write(" : ");
             
-            #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
+            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.BaseForm.Name));
+            
+            #line default
+            #line hidden
+            this.Write("<");
+            
+            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n    {\r\n\r\n        ");
+            this.Write(">\r\n    {\r\n        public ");
             
-            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
-
-
-            List<Column> cols = generator.Table.Columns;
-            for(int i=0; i<cols.Count; i++)
-            {
-                if(cols[i].IsPrimaryKey)
-                {
-                    WriteLine($"[Column(\"{cols[i].DatabaseName}\", FieldFlags.PRIMARY_KEY)]");
-                }
-                else
-                {
-                    WriteLine($"        [Column(\"{cols[i].DatabaseName}\")]");
-                }
-                WriteLine($"        public {cols[i].Type} {cols[i].Name} {{ get; set; }}");
-            }
-
-        
+            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n    }\r\n\r\n}\r\n");
+            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n        protected" +
+                    " override List<");
+            
+            #line 22 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
+            
+            #line default
+            #line hidden
+            this.Write("> GetData()\r\n        {\r\n            return ");
+            
+            #line 24 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
+            
+            #line default
+            #line hidden
+            this.Write("DAO.Instance().GetAll();\r\n        }\r\n\r\n        protected override void Delete(");
+            
+            #line 27 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
+            
+            #line default
+            #line hidden
+            this.Write(@" item)
+        {
+            var dialogResult = MessageBox.Show(""Are you sure to delete this item?"", ""Warning"", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if(dialogResult == DialogResult.Yes)
+            {
+                ");
+            
+            #line 33 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
+            
+            #line default
+            #line hidden
+            this.Write("DAO.Instance().Delete(item);\r\n            }\r\n        }\r\n\r\n        protected overr" +
+                    "ide void Add()\r\n        {\r\n            throw new NotImplementedException();\r\n   " +
+                    "     }\r\n\r\n        protected override void Update(");
+            
+            #line 42 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
+            
+            #line default
+            #line hidden
+            this.Write(" item)\r\n        {\r\n            throw new NotImplementedException();\r\n        }\r\n " +
+                    "   }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -85,7 +129,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ModelTemplateBase
+    public class ViewConcreteTableFormTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

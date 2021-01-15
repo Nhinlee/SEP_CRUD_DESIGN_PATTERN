@@ -7,21 +7,20 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD_DesignPattern.Templates.Models
+namespace SEP_CRUD_DesignPattern.Templates.Forms
 {
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using SEP_CRUD_DesignPattern.DB;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormDesignerTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ModelTemplate : ModelTemplateBase
+    public partial class ViewConcreteTableFormDesignerTemplate : ViewConcreteTableFormDesignerTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,51 +28,54 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing System;\r\nusing CustomHibernateSQL.Attributes;\r\n\r\nnamespace ");
+            this.Write("\r\nnamespace ");
             
-            #line 11 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
+            #line 7 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormDesignerTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n    [Table(\"");
+            this.Write("\r\n{\r\n    partial class ");
             
-            #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.DatabaseName));
-            
-            #line default
-            #line hidden
-            this.Write("\", \"dbo\")]\r\n    public class ");
-            
-            #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
+            #line 9 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormDesignerTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write("\r\n    {\r\n\r\n        ");
-            
-            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
+            this.Write(@"
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-
-            List<Column> cols = generator.Table.Columns;
-            for(int i=0; i<cols.Count; i++)
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name=""disposing"">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
             {
-                if(cols[i].IsPrimaryKey)
-                {
-                    WriteLine($"[Column(\"{cols[i].DatabaseName}\", FieldFlags.PRIMARY_KEY)]");
-                }
-                else
-                {
-                    WriteLine($"        [Column(\"{cols[i].DatabaseName}\")]");
-                }
-                WriteLine($"        public {cols[i].Type} {cols[i].Name} {{ get; set; }}");
+                components.Dispose();
             }
+            base.Dispose(disposing);
+        }
 
-        
-            
-            #line default
-            #line hidden
-            this.Write("\r\n    }\r\n\r\n}\r\n");
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+        }
+
+        #endregion
+    }
+}");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -85,7 +87,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ModelTemplateBase
+    public class ViewConcreteTableFormDesignerTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

@@ -80,7 +80,10 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
         private void btnViewTable_Click(object sender, EventArgs e)
         {
             // Open View Table Form -------------------------------
+            string tableSelected = listBoxDBTable.SelectedItem as string;
 
+            var form = new ViewEmployeesTableForm();
+            form.Show();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
