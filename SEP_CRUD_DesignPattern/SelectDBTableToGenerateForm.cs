@@ -67,6 +67,7 @@ namespace SEP_CRUD_DesignPattern
 
         private void btnStartGenerate_Click(object sender, EventArgs e)
         {
+            // TODO: Refactor this code (group generator ->>>>>>)
             // DESKTOP-1RVEUQ2
             // Get list table is selected to generate
             var tables = listBoxDBTable.SelectedItems.Cast<Table>().ToList();
@@ -90,8 +91,9 @@ namespace SEP_CRUD_DesignPattern
             var viewTableForm = new ViewTableFormGenerator();
             var viewTableFormDesigner = new ViewTableFormDesignerGenerator(viewTableForm);
 
-            // Generate Class
+            // Generate Essential Class
             var dbLoader = new DatabaseLoaderGenerator(tables, DatabaseLoader.Instance.ConnectionStringBuilder);
+            var enumFormType = new EnumFormTypeGenerator();
             var program = new ProgramGenerator(viewListTableForm);
 
             // Generate Model
@@ -105,15 +107,22 @@ namespace SEP_CRUD_DesignPattern
                 var viewConcreteTableForm = new ViewConcreteTableFormGenerator(table, viewTableForm);
                 var viewConreteTableFormDesigner = new ViewConcreteTableFormDesignerGenerator(table.Name, viewConcreteTableForm);
 
+                // Generate Edit Form
+                var editForm = new EditFormGenerator(table);
+                var editFormDesigner = new EditFormDesignerGenerator(table, editForm);
+
                 project1.Add(modelGen);
                 project1.Add(modelDaoGen);
                 project1.Add(viewConcreteTableForm);
                 project1.Add(viewConreteTableFormDesigner);
+                project1.Add(editForm);
+                project1.Add(editFormDesigner);
             }
 
             //-------------------------------------------------------------------------------------------------
             // Add to project and solution
             project1.Add(dbLoader);
+            project1.Add(enumFormType);
             project1.Add(program);
 
             project1.Add(loginForm);

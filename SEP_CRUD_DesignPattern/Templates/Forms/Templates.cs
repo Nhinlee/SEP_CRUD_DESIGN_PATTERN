@@ -77,4 +77,31 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             this.generator = g;
         }
     }
+
+    partial class EditFormDesignerTemplate
+    {
+        private EditFormDesignerGenerator generator;
+        public EditFormDesignerTemplate(EditFormDesignerGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class EditFormTemplate
+    {
+        private EditFormGenerator generator;
+        public EditFormTemplate(EditFormGenerator g)
+        {
+            this.generator = g;
+        }
+    }
+
+    partial class FormTypeTemplate
+    {
+        private EnumFormTypeGenerator generator;
+        public FormTypeTemplate(EnumFormTypeGenerator g)
+        {
+            this.generator = g;
+        }
+    }
 }

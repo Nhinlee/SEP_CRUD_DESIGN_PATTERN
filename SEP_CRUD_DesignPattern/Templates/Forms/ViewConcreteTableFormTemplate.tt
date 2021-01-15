@@ -36,12 +36,14 @@ namespace <#= generator.Namespace #>
 
         protected override void Add()
         {
-            throw new NotImplementedException();
+            // TODO: refactor this template
+            (new Edit<#= generator.Table.Name #>Form(null, EditFormType.ADD)).ShowDialog();
         }
 
         protected override void Update(<#= generator.Table.Name #> item)
         {
-            throw new NotImplementedException();
+            // TODO: refactor this template
+            (new Edit<#= generator.Table.Name #>Form(item, EditFormType.UPDATE)).ShowDialog();
         }
     }
 }

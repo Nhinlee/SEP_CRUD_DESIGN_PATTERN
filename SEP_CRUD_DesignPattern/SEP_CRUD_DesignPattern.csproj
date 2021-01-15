@@ -66,6 +66,9 @@
     <Compile Include="Generators\Bases\FormGenerator.cs" />
     <Compile Include="Generators\Bases\GroupGenerator.cs" />
     <Compile Include="Generators\Bases\Generator.cs" />
+    <Compile Include="Generators\Forms\EditFormDesignerGenerator.cs" />
+    <Compile Include="Generators\Forms\EditFormGenerator.cs" />
+    <Compile Include="Generators\Forms\EnumFormTypeGenerator.cs" />
     <Compile Include="Generators\Forms\ViewConcreteTableFormDesignerGenerator.cs" />
     <Compile Include="Generators\Forms\ViewConcreteTableFormGenerator.cs" />
     <Compile Include="Generators\Forms\ViewListTableFormDesignerGenerator.cs" />
@@ -94,6 +97,21 @@
     </Compile>
     <Compile Include="SelectDBTableToGenerateForm.Designer.cs">
       <DependentUpon>SelectDBTableToGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Forms\EditFormDesignerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditFormDesignerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Forms\EditFormTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditFormTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Forms\FormTypeTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormTypeTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Forms\LoginFormDesignerTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -224,6 +242,18 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Templates\Forms\EditFormDesignerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EditFormDesignerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Forms\EditFormTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EditFormTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Forms\FormTypeTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FormTypeTemplate.cs</LastGenOutput>
+    </Content>
     <Content Include="Templates\Forms\LoginFormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>LoginFormDesignerTemplate.cs</LastGenOutput>

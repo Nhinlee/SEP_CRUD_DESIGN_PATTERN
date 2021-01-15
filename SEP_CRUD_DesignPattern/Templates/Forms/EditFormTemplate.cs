@@ -13,15 +13,16 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
     using System.Text;
     using System.Collections.Generic;
     using SEP_CRUD_DesignPattern.Generators.Helpers;
+    using SEP_CRUD_DesignPattern.DB;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ViewConcreteTableFormTemplate : ViewConcreteTableFormTemplateBase
+    public partial class EditFormTemplate : EditFormTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,110 +30,102 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing System.Windows.Forms;\r\nusing System;\r\nusing System.Collections.Generic;\r\n" +
-                    "using ");
+            this.Write("\r\nusing System;\r\nusing System.Windows.Forms;\r\nusing ");
             
-            #line 11 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 11 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(NamespaceHelper.Instance.ModelsNamespace));
             
             #line default
             #line hidden
             this.Write(";\r\n\r\nnamespace ");
             
-            #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public partial class ");
             
-            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write(" : ");
+            this.Write(" : Form\r\n    {\r\n        private EditFormType formType;\r\n        public ");
             
-            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.BaseForm.Name));
-            
-            #line default
-            #line hidden
-            this.Write("<");
-            
-            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
-            
-            #line default
-            #line hidden
-            this.Write(">\r\n    {\r\n        public ");
-            
-            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 18 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n\r\n        protected" +
-                    " override List<");
+            this.Write("(");
             
-            #line 22 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 18 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
             
             #line default
             #line hidden
-            this.Write("> GetData()\r\n        {\r\n            return ");
-            
-            #line 24 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
-            
-            #line default
-            #line hidden
-            this.Write("DAO.Instance().GetAll();\r\n        }\r\n\r\n        protected override void Delete(");
-            
-            #line 27 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
-            
-            #line default
-            #line hidden
-            this.Write(@" item)
+            this.Write(@" item, EditFormType formType)
         {
-            var dialogResult = MessageBox.Show(""Are you sure to delete this item?"", ""Warning"", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-            if(dialogResult == DialogResult.Yes)
+            InitializeComponent();
+            bindingSourceEditForm.DataSource = item;
+            this.formType = formType;
+
+            if (bindingSourceEditForm.DataSource == null)
             {
-                ");
+                bindingSourceEditForm.DataSource = new Employees();
+            }
+            // Binding data to textbox
+            ");
             
-            #line 33 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 29 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
+
+
+            WriteLine("");
+            
+            var columns = generator.Table.Columns;
+            for(int i = 0; i < columns.Count; i++)
+            {
+                WriteLine($"            textBox{columns[i].Name}.DataBindings.Add(\"Text\", bindingSourceEditForm, \"{columns[i].Name}\");");
+            }
+
+            
+            
+            #line default
+            #line hidden
+            this.Write("\r\n            // Event Handler\r\n            this.btnSave.Click += SaveDataToDB;\r\n" +
+                    "        }\r\n\r\n        private void SaveDataToDB(object sender, EventArgs e)\r\n    " +
+                    "    {\r\n            if(formType == EditFormType.ADD)\r\n            {\r\n            " +
+                    "    ");
+            
+            #line 49 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
             
             #line default
             #line hidden
-            this.Write("DAO.Instance().Delete(item);\r\n            }\r\n        }\r\n\r\n        protected overr" +
-                    "ide void Add()\r\n        {\r\n            // TODO: refactor this template\r\n        " +
-                    "    (new Edit");
+            this.Write("DAO.Instance().Insert(bindingSourceEditForm.Current as ");
             
-            #line 40 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 49 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
             
             #line default
             #line hidden
-            this.Write("Form(null, EditFormType.ADD)).ShowDialog();\r\n        }\r\n\r\n        protected overr" +
-                    "ide void Update(");
+            this.Write(");\r\n            }\r\n            else if(formType == EditFormType.UPDATE)\r\n        " +
+                    "    {\r\n                ");
             
-            #line 43 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 53 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
             
             #line default
             #line hidden
-            this.Write(" item)\r\n        {\r\n            // TODO: refactor this template\r\n            (new " +
-                    "Edit");
+            this.Write("DAO.Instance().Update(bindingSourceEditForm.Current as ");
             
-            #line 46 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewConcreteTableFormTemplate.tt"
+            #line 53 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\EditFormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));
             
             #line default
             #line hidden
-            this.Write("Form(item, EditFormType.UPDATE)).ShowDialog();\r\n        }\r\n    }\r\n}");
+            this.Write(");\r\n            }\r\n            Close();\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -144,7 +137,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ViewConcreteTableFormTemplateBase
+    public class EditFormTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;
