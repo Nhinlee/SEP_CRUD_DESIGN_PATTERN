@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaseForm.Designer.cs">
-      <DependentUpon>BaseForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DB\Column.cs" />
     <Compile Include="DB\ConvertType.cs" />
     <Compile Include="DB\DatabaseHolder.cs" />
@@ -62,23 +56,11 @@
     <Compile Include="Generators\AssemblyInfoGenerator.cs" />
     <Compile Include="Generators\Bases\ClassGenerator.cs" />
     <Compile Include="Generators\Bases\FileGenerator.cs" />
-    <Compile Include="Generators\Bases\FormDesignerGenerator.cs" />
-    <Compile Include="Generators\Bases\FormGenerator.cs" />
+    <Compile Include="Generators\FormDesignerGenerator.cs" />
+    <Compile Include="Generators\FormGenerator.cs" />
     <Compile Include="Generators\Bases\GroupGenerator.cs" />
     <Compile Include="Generators\Bases\Generator.cs" />
-    <Compile Include="Generators\Forms\EditFormDesignerGenerator.cs" />
-    <Compile Include="Generators\Forms\EditFormGenerator.cs" />
-    <Compile Include="Generators\Forms\EnumFormTypeGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewConcreteTableFormDesignerGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewConcreteTableFormGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewListTableFormDesignerGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewTableFormDesignerGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewTableFormFactoryGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewTableFormGenerator.cs" />
-    <Compile Include="Generators\Models\DatabaseLoaderGenerator.cs" />
     <Compile Include="Generators\Helpers\NamespaceHelper.cs" />
-    <Compile Include="Generators\Forms\LoginFormDesignerGenerator.cs" />
-    <Compile Include="Generators\Forms\LoginFormGenerator.cs" />
     <Compile Include="Generators\Models\ModelDaoGenerator.cs" />
     <Compile Include="Generators\Models\ModelGenerator.cs" />
     <Compile Include="Generators\ProgramGenerator.cs" />
@@ -86,7 +68,6 @@
     <Compile Include="Generators\SettingGenerator.cs" />
     <Compile Include="Generators\SettingsDesignerGenerator.cs" />
     <Compile Include="Generators\SolutionGenerator.cs" />
-    <Compile Include="Generators\Forms\ViewListTableFormGenerator.cs" />
     <Compile Include="LoginDBForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,72 +80,17 @@
     <Compile Include="SelectDBTableToGenerateForm.Designer.cs">
       <DependentUpon>SelectDBTableToGenerateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Forms\EditFormDesignerTemplate.cs">
+    <Compile Include="Templates\Forms\FormDesignerTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EditFormDesignerTemplate.tt</DependentUpon>
+      <DependentUpon>FormDesignerTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Templates\Forms\EditFormTemplate.cs">
+    <Compile Include="Templates\Forms\FormTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EditFormTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\FormTypeTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FormTypeTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\LoginFormDesignerTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginFormDesignerTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\LoginFormTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginFormTemplate.tt</DependentUpon>
+      <DependentUpon>FormTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Forms\Templates.cs" />
-    <Compile Include="Templates\Forms\ViewConcreteTableFormDesignerTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewConcreteTableFormDesignerTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\ViewConcreteTableFormTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewConcreteTableFormTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\ViewListTableFormDesignerTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewListTableFormDesignerTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\ViewListTableFormTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewListTableFormTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\ViewTableFormFactoryTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewTableFormFactoryTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\ViewTableFormTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewTableFormTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Forms\ViewTableFormDesignerTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ViewTableFormDesignerTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Templates\Models\DatabaseLoaderTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatabaseLoaderTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="Templates\Models\ModelDaoTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -211,9 +137,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates\Properties\Templates.cs" />
     <Compile Include="Util\Constant.cs" />
-    <EmbeddedResource Include="BaseForm.resx">
-      <DependentUpon>BaseForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LoginDBForm.resx">
       <DependentUpon>LoginDBForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,57 +171,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Templates\Forms\EditFormDesignerTemplate.tt">
+    <Content Include="Templates\Forms\FormDesignerTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>EditFormDesignerTemplate.cs</LastGenOutput>
+      <LastGenOutput>FormDesignerTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Templates\Forms\EditFormTemplate.tt">
+    <Content Include="Templates\Forms\FormTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>EditFormTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\FormTypeTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>FormTypeTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\LoginFormDesignerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>LoginFormDesignerTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\LoginFormTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>LoginFormTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewConcreteTableFormDesignerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewConcreteTableFormDesignerTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewConcreteTableFormTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewConcreteTableFormTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewListTableFormDesignerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewListTableFormDesignerTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewListTableFormTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewListTableFormTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewTableFormFactoryTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewTableFormFactoryTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewTableFormTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewTableFormTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Forms\ViewTableFormDesignerTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ViewTableFormDesignerTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Models\DatabaseLoaderTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>DatabaseLoaderTemplate.cs</LastGenOutput>
+      <LastGenOutput>FormTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Templates\Models\ModelDaoTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

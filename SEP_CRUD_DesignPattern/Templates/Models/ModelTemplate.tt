@@ -11,7 +11,7 @@ using CustomHibernateSQL.Attributes;
 namespace <#= generator.Namespace #>
 {
     [Table("<#= generator.Table.DatabaseName #>", "dbo")]
-    public class <#= generator.Table.Name #>
+    class <#= generator.Table.Name #>
     {
 
         <#

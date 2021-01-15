@@ -43,7 +43,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Models
             
             #line default
             #line hidden
-            this.Write("\", \"dbo\")]\r\n    public class ");
+            this.Write("\", \"dbo\")]\r\n    class ");
             
             #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Models\ModelTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Table.Name));

@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace SEP_CRUD_DesignPattern.Templates.Project
+namespace SEP_CRUD_DesignPattern.Templates.Forms
 {
     using System.Linq;
     using System.Text;
@@ -18,9 +18,9 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ProgramTemplate : ProgramTemplateBase
+    public partial class FormTemplate : FormTemplateBase
     {
 #line hidden
         /// <summary>
@@ -28,34 +28,30 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing S" +
-                    "ystem.Threading.Tasks;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
+            this.Write("\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.ComponentModel;\r" +
+                    "\nusing System.Data;\r\nusing System.Drawing;\r\nusing System.Linq;\r\nusing System.Tex" +
+                    "t;\r\nusing System.Threading.Tasks;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
-            this.Write(@"
-{
-    static class Program
-    {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ");
+            this.Write("\r\n{\r\n    public partial class ");
             
-            #line 26 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(generator.StartForm.Name));
+            #line 19 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write("());\r\n        }\r\n    }\r\n}\r\n");
+            this.Write(" : Form\r\n    {\r\n        public ");
+            
+            #line 21 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\FormTemplate.tt"
+ Write(generator.Name); 
+            
+            #line default
+            #line hidden
+            this.Write("()\r\n        {\r\n            InitializeComponent();\r\n        }\r\n    }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -67,7 +63,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ProgramTemplateBase
+    public class FormTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

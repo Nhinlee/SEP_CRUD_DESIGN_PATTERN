@@ -10,7 +10,7 @@ using CustomHibernateSQL.DAO;
 
 namespace <#= generator.Namespace #>
 {
-    public class <#= generator.Table.Name #>DAO : BaseDAO<<#= generator.Table.Name #>>
+    class <#= generator.Table.Name #>DAO : BaseDAO<<#= generator.Table.Name #>>
     {
         private static <#= generator.Table.Name #>DAO _instance = new <#= generator.Table.Name #>DAO();
 

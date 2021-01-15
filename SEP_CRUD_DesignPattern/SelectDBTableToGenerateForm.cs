@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using SEP_CRUD_DesignPattern.DB;
 using SEP_CRUD_DesignPattern.Generators;
 using SEP_CRUD_DesignPattern.Generators.Models;
 using SEP_CRUD_DesignPattern.Generators.Helpers;
-using SEP_CRUD_DesignPattern.Generators.Forms;
-using System.IO;
 
 namespace SEP_CRUD_DesignPattern
 {
@@ -67,98 +68,41 @@ namespace SEP_CRUD_DesignPattern
 
         private void btnStartGenerate_Click(object sender, EventArgs e)
         {
-            // TODO: Refactor this code (group generator ->>>>>>)
             // DESKTOP-1RVEUQ2
             // Get list table is selected to generate
-            var tables = listBoxDBTable.SelectedItems.Cast<Table>().ToList();
+            List<Table> tables = listBoxDBTable.SelectedItems.Cast<Table>().ToList();
 
             // Get project information to generate
-            var projectInfo = bindingSourceProjectInfo.Current as ProjectInfo;
+            ProjectInfo projectInfo = bindingSourceProjectInfo.Current as ProjectInfo;
             if (!projectInfo.IsOKToGenerate()) return;
 
             // Start Generate Project
-            var solution = new SolutionGenerator(projectInfo.SolutionName);
-            var project1 = new ProjectGenerator(projectInfo.ProjectName);
+            SolutionGenerator solution = new SolutionGenerator(projectInfo.SolutionName);
+            ProjectGenerator project1 = new ProjectGenerator(projectInfo.ProjectName);
             NamespaceHelper.Instance.ProjectNamespace = project1.Name;
 
             // Generate Form
-            var loginForm = new LoginFormGenerator();
-            var loginFormDesigner = new LoginFormDesignerGenerator(loginForm);
-
-            var viewListTableForm = new ViewListTableFormGenerator();
-            var viewListTableFormDesigner = new ViewListTableFormDesignerGenerator(viewListTableForm);
-
-            var viewTableForm = new ViewTableFormGenerator();
-            var viewTableFormDesigner = new ViewTableFormDesignerGenerator(viewTableForm);
-
-            // Generate Essential Class
-            var dbLoader = new DatabaseLoaderGenerator(tables, DatabaseLoader.Instance.ConnectionStringBuilder);
-            var enumFormType = new EnumFormTypeGenerator();
-            var program = new ProgramGenerator(viewListTableForm);
-
-            // Generate Model And Forms
+            FormGenerator form1 = new FormGenerator("generateForm", project1.Name, "");
+            FormDesignerGenerator form1Designer = new FormDesignerGenerator(form1);
+            // Generate Program
+            ProgramGenerator program = new ProgramGenerator(project1.Name, form1);
+            // Generate Model
             foreach (var table in tables)
             {
-                // Generate Model
-                var modelGen = new ModelGenerator(table);
-                var modelDaoGen = new ModelDaoGenerator(table);
-
-                // Generate View Table Form
-                var viewConcreteTableForm = new ViewConcreteTableFormGenerator(table, viewTableForm);
-                var viewConreteTableFormDesigner = new ViewConcreteTableFormDesignerGenerator(table.Name, viewConcreteTableForm);
-
-                // Generate Edit Form
-                var editForm = new EditFormGenerator(table);
-                var editFormDesigner = new EditFormDesignerGenerator(table, editForm);
+                ModelGenerator modelGen = new ModelGenerator(table);
+                ModelDaoGenerator modelDaoGen = new ModelDaoGenerator(table);
 
                 project1.Add(modelGen);
                 project1.Add(modelDaoGen);
-                project1.Add(viewConcreteTableForm);
-                project1.Add(viewConreteTableFormDesigner);
-                project1.Add(editForm);
-                project1.Add(editFormDesigner);
             }
-
-            // Generate View Table Form Factory
-            var viewTableFormFactory = new ViewTableFormFactoryGenerator(tables);
-
-            //-------------------------------------------------------------------------------------------------
             // Add to project and solution
-            project1.Add(dbLoader);
-            project1.Add(enumFormType);
+            project1.Add(form1);
+            project1.Add(form1Designer);
             project1.Add(program);
-
-            project1.Add(loginForm);
-            project1.Add(loginFormDesigner);
-
-            project1.Add(viewListTableForm);
-            project1.Add(viewListTableFormDesigner);
-
-            project1.Add(viewTableForm);
-            project1.Add(viewTableFormDesigner);
-
-            project1.Add(viewTableFormFactory);
-
             solution.Add(project1);
+
             solution.ExportToFile(projectInfo.Path);
-            // Copy Custom Hibernate SQL to Generated Project
-            CopyHibernateSQLToProject(projectInfo.SolutionPath, project1.Name);
-
             Close();
-        }
-
-        private void CopyHibernateSQLToProject(string solutionPath, string projectName)
-        {
-            // TODO: Refactor this hard code
-            string fileName = "CustomHibernateSQL.dll";
-            string srcPath = Path.Combine("orm", fileName);
-            string destPath = Path.Combine(solutionPath, projectName, "orm");
-            string destFilePath = Path.Combine(destPath, fileName);
-
-            Directory.CreateDirectory(destPath);
-            File.Create(destFilePath).Dispose();
-
-            File.Copy(srcPath, destFilePath, true);
         }
     }
 
