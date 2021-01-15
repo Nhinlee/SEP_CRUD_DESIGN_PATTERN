@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEP_CRUD_DesignPattern", "SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern.csproj", "{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomHibernateSQL", "CustomHibernateSQL\CustomHibernateSQL.csproj", "{583202DC-D7BD-4CF3-9FBD-4CDC65F84912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingHibernateSQL", "TestingHibernateSQL\TestingHibernateSQL.csproj", "{82EAD1CE-FF33-4875-A7D7-F159E728841C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0C9547-55F7-4A6F-A4FB-2A7CD8EA08E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583202DC-D7BD-4CF3-9FBD-4CDC65F84912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583202DC-D7BD-4CF3-9FBD-4CDC65F84912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583202DC-D7BD-4CF3-9FBD-4CDC65F84912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583202DC-D7BD-4CF3-9FBD-4CDC65F84912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82EAD1CE-FF33-4875-A7D7-F159E728841C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82EAD1CE-FF33-4875-A7D7-F159E728841C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82EAD1CE-FF33-4875-A7D7-F159E728841C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82EAD1CE-FF33-4875-A7D7-F159E728841C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC4D6486-5A1B-4FC8-908C-8B2F2AEC6573}
+	EndGlobalSection
+EndGlobal

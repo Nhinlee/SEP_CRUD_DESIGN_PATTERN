@@ -96,7 +96,7 @@ namespace SEP_CRUD_DesignPattern
             var enumFormType = new EnumFormTypeGenerator();
             var program = new ProgramGenerator(viewListTableForm);
 
-            // Generate Model
+            // Generate Model And Forms
             foreach (var table in tables)
             {
                 // Generate Model
@@ -119,6 +119,9 @@ namespace SEP_CRUD_DesignPattern
                 project1.Add(editFormDesigner);
             }
 
+            // Generate View Table Form Factory
+            var viewTableFormFactory = new ViewTableFormFactoryGenerator(tables);
+
             //-------------------------------------------------------------------------------------------------
             // Add to project and solution
             project1.Add(dbLoader);
@@ -133,6 +136,8 @@ namespace SEP_CRUD_DesignPattern
 
             project1.Add(viewTableForm);
             project1.Add(viewTableFormDesigner);
+
+            project1.Add(viewTableFormFactory);
 
             solution.Add(project1);
             solution.ExportToFile(projectInfo.Path);

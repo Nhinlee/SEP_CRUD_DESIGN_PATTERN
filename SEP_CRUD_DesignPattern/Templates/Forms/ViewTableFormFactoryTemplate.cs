@@ -12,16 +12,15 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
-    using SEP_CRUD_DesignPattern.Generators.Helpers;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewListTableFormTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ViewListTableFormTemplate : ViewListTableFormTemplateBase
+    public partial class ViewTableFormFactoryTemplate : ViewTableFormFactoryTemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,69 +28,75 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\nusing System;\r\nusing System.Windows.Forms;\r\nusing ");
+            this.Write("\r\nusing System.Collections.Generic;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
             
-            #line 10 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewListTableFormTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(NamespaceHelper.Instance.ModelsNamespace));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n\r\nnamespace ");
-            
-            #line 12 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewListTableFormTemplate.tt"
+            #line 10 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n    public partial class ");
+            this.Write("\r\n{\r\n    class ");
             
-            #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewListTableFormTemplate.tt"
+            #line 12 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write(" : Form\r\n    {\r\n        public ");
+            this.Write("\r\n    {\r\n\r\n        // Singleton\r\n        private static ");
             
-            #line 16 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewListTableFormTemplate.tt"
+            #line 16 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
             
             #line default
             #line hidden
-            this.Write(@"()
+            this.Write(" _instance = new ");
+            
+            #line 16 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
+            
+            #line default
+            #line hidden
+            this.Write("();\r\n        private ");
+            
+            #line 17 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
+            
+            #line default
+            #line hidden
+            this.Write("() { Init(); }\r\n\r\n        public static ");
+            
+            #line 19 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(generator.Name));
+            
+            #line default
+            #line hidden
+            this.Write(@" Instance { get => _instance; }
+        //---------------------------------------------------------------
+
+        private Dictionary<string, Form> tables = new Dictionary<string, Form>();
+
+        private void Init()
         {
-            InitializeComponent();
+            //tables.Add(""Employees"", new ViewEmployeesTableForm());
+            //tables.Add(""Persons"", new ViewPersonsTableForm());
+            ");
+            
+            #line 28 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Forms\ViewTableFormFactoryTemplate.tt"
 
-            // Event Handler
-            this.btnViewTable.Click += new EventHandler(btnViewTable_Click);
-            this.btnCancel.Click += new EventHandler(btnCancel_Click);
 
-            // 
-            var loginForm = new LoginForm();
-            loginForm.OnLoginSuccess += OnLoginSuccessHandler;
-            loginForm.ShowDialog();
-        }
+            for(int i=0; i<generator.Tables.Count; i++)
+            {
+                WriteLine($"tables.Add(\"{generator.Tables[i].Name}\", new View{generator.Tables[i].Name}TableForm());");
+            }
 
-        private void OnLoginSuccessHandler()
-        {
-            // Fill data into listbox
-            this.listBoxDBTable.DataSource = DatabaseLoader.Instance.SelectedTables;
-        }
-
-        private void btnViewTable_Click(object sender, EventArgs e)
-        {
-            // Open View Table Form -------------------------------
-            string tableSelected = listBoxDBTable.SelectedItem as string;
-
-            var form = ViewTableFormFactory.Instance.GetViewTableForm(tableSelected);
-            form.Show();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-    }
-}");
+            
+            
+            #line default
+            #line hidden
+            this.Write("        }\r\n\r\n        public Form GetViewTableForm(string tableName)\r\n        {\r\n " +
+                    "           if (tables.ContainsKey(tableName))\r\n            {\r\n                re" +
+                    "turn tables[tableName];\r\n            }\r\n            return null;\r\n        }\r\n   " +
+                    " }\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -103,7 +108,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public class ViewListTableFormTemplateBase
+    public class ViewTableFormFactoryTemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

@@ -104,4 +104,14 @@ namespace SEP_CRUD_DesignPattern.Templates.Forms
             this.generator = g;
         }
     }
+
+    partial class ViewTableFormFactoryTemplate
+    {
+        private ViewTableFormFactoryGenerator generator;
+
+        public ViewTableFormFactoryTemplate(ViewTableFormFactoryGenerator g)
+        {
+            this.generator = g;
+        }
+    }
 }

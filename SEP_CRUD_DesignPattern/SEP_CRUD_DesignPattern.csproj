@@ -73,6 +73,7 @@
     <Compile Include="Generators\Forms\ViewConcreteTableFormGenerator.cs" />
     <Compile Include="Generators\Forms\ViewListTableFormDesignerGenerator.cs" />
     <Compile Include="Generators\Forms\ViewTableFormDesignerGenerator.cs" />
+    <Compile Include="Generators\Forms\ViewTableFormFactoryGenerator.cs" />
     <Compile Include="Generators\Forms\ViewTableFormGenerator.cs" />
     <Compile Include="Generators\Models\DatabaseLoaderGenerator.cs" />
     <Compile Include="Generators\Helpers\NamespaceHelper.cs" />
@@ -143,6 +144,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ViewListTableFormTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Forms\ViewTableFormFactoryTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewTableFormFactoryTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Templates\Forms\ViewTableFormTemplate.cs">
       <AutoGen>True</AutoGen>
@@ -277,6 +283,10 @@
     <Content Include="Templates\Forms\ViewListTableFormTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ViewListTableFormTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Forms\ViewTableFormFactoryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ViewTableFormFactoryTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Templates\Forms\ViewTableFormTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
