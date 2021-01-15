@@ -1,0 +1,101 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+namespace <#= generator.Namespace #>
+{
+    partial class <#= generator.Name #>
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.listBoxDBTable = new System.Windows.Forms.ListBox();
+            this.btnViewTable = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // listBoxDBTable
+            // 
+            this.listBoxDBTable.FormattingEnabled = true;
+            this.listBoxDBTable.ItemHeight = 16;
+            this.listBoxDBTable.Location = new System.Drawing.Point(12, 99);
+            this.listBoxDBTable.Name = "listBoxDBTable";
+            this.listBoxDBTable.Size = new System.Drawing.Size(517, 308);
+            this.listBoxDBTable.TabIndex = 1;
+            // 
+            // btnViewTable
+            // 
+            this.btnViewTable.Location = new System.Drawing.Point(276, 458);
+            this.btnViewTable.Name = "btnViewTable";
+            this.btnViewTable.Size = new System.Drawing.Size(129, 37);
+            this.btnViewTable.TabIndex = 2;
+            this.btnViewTable.Text = "View";
+            this.btnViewTable.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(423, 458);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(106, 37);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(193, 17);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Which table you wanna view?";
+            // 
+            // ViewListTableForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(547, 518);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnViewTable);
+            this.Controls.Add(this.listBoxDBTable);
+            this.Name = "ViewListTableForm";
+            this.Text = "ViewListTableForm";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.ListBox listBoxDBTable;
+        private System.Windows.Forms.Button btnViewTable;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label1;
+    }
+}

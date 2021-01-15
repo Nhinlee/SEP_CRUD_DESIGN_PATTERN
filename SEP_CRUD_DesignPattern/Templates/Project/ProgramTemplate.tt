@@ -3,13 +3,14 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-
+<#@ import namespace="SEP_CRUD_DesignPattern.Generators.Helpers" #>
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using <#= NamespaceHelper.Instance.FormsNamespace #>;
 
 namespace <#= generator.Namespace #>
 {

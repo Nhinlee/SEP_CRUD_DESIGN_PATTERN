@@ -1,0 +1,37 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD_DesignPattern.DB" #>
+
+using System;
+using CustomHibernateSQL.Attributes;
+
+namespace <#= generator.Namespace #>
+{
+    [Table("<#= generator.Table.DatabaseName #>", "dbo")]
+    public class <#= generator.Table.Name #>
+    {
+
+        <#
+
+            List<Column> cols = generator.Table.Columns;
+            for(int i=0; i<cols.Count; i++)
+            {
+                if(cols[i].IsPrimaryKey)
+                {
+                    WriteLine($"[Column(\"{cols[i].DatabaseName}\", FieldFlags.PRIMARY_KEY)]");
+                }
+                else
+                {
+                    WriteLine($"        [Column(\"{cols[i].DatabaseName}\")]");
+                }
+                WriteLine($"        public {cols[i].Type} {cols[i].Name} {{ get; set; }}");
+            }
+
+        #>
+
+    }
+
+}

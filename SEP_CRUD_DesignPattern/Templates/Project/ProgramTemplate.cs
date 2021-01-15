@@ -12,6 +12,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
     using System.Linq;
     using System.Text;
     using System.Collections.Generic;
+    using SEP_CRUD_DesignPattern.Generators.Helpers;
     using System;
     
     /// <summary>
@@ -28,10 +29,17 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing S" +
-                    "ystem.Threading.Tasks;\r\nusing System.Windows.Forms;\r\n\r\nnamespace ");
+            this.Write("\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Sys" +
+                    "tem.Threading.Tasks;\r\nusing System.Windows.Forms;\r\nusing ");
             
-            #line 14 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+            #line 13 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(NamespaceHelper.Instance.FormsNamespace));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n\r\nnamespace ");
+            
+            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.Namespace));
             
             #line default
@@ -50,7 +58,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ");
             
-            #line 26 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
+            #line 27 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\ProgramTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(generator.StartForm.Name));
             
             #line default

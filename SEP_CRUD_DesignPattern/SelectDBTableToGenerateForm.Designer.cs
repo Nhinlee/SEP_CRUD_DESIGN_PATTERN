@@ -35,6 +35,7 @@ namespace SEP_CRUD_DesignPattern
             this.btnStartGenerate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tbLocation = new System.Windows.Forms.TextBox();
+            this.bindingSourceProjectInfo = new System.Windows.Forms.BindingSource(this.components);
             this.lbLocation = new System.Windows.Forms.Label();
             this.lbProjectName = new System.Windows.Forms.Label();
             this.tbProjectName = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@ namespace SEP_CRUD_DesignPattern
             this.tbSolutionName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.bindingSourceProjectInfo = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProjectInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,10 +88,15 @@ namespace SEP_CRUD_DesignPattern
             // 
             // tbLocation
             // 
+            this.tbLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProjectInfo, "Path", true));
             this.tbLocation.Location = new System.Drawing.Point(146, 522);
             this.tbLocation.Name = "tbLocation";
             this.tbLocation.Size = new System.Drawing.Size(577, 22);
             this.tbLocation.TabIndex = 4;
+            // 
+            // bindingSourceProjectInfo
+            // 
+            this.bindingSourceProjectInfo.DataSource = typeof(SEP_CRUD_DesignPattern.ProjectInfo);
             // 
             // lbLocation
             // 
@@ -113,9 +118,10 @@ namespace SEP_CRUD_DesignPattern
             // 
             // tbProjectName
             // 
+            this.tbProjectName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProjectInfo, "ProjectName", true));
             this.tbProjectName.Location = new System.Drawing.Point(146, 431);
             this.tbProjectName.Name = "tbProjectName";
-            this.tbProjectName.Size = new System.Drawing.Size(310, 22);
+            this.tbProjectName.Size = new System.Drawing.Size(577, 22);
             this.tbProjectName.TabIndex = 7;
             // 
             // btnBrowser
@@ -139,9 +145,10 @@ namespace SEP_CRUD_DesignPattern
             // 
             // tbSolutionName
             // 
+            this.tbSolutionName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProjectInfo, "SolutionName", true));
             this.tbSolutionName.Location = new System.Drawing.Point(146, 476);
             this.tbSolutionName.Name = "tbSolutionName";
-            this.tbSolutionName.Size = new System.Drawing.Size(310, 22);
+            this.tbSolutionName.Size = new System.Drawing.Size(577, 22);
             this.tbSolutionName.TabIndex = 10;
             // 
             // label1

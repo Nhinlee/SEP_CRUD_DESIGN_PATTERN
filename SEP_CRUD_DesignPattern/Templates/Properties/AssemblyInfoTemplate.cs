@@ -18,7 +18,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Properties
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class AssemblyInfoTemplate : AssemblyInfoTemplateBase
     {
@@ -39,7 +39,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle(""");
             
-            #line 15 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
+            #line 15 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -47,7 +47,7 @@ using System.Runtime.InteropServices;
             this.Write("\")]\r\n[assembly: AssemblyDescription(\"\")]\r\n[assembly: AssemblyConfiguration(\"\")]\r\n" +
                     "[assembly: AssemblyCompany(\"\")]\r\n[assembly: AssemblyProduct(\"");
             
-            #line 19 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
+            #line 19 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
  Write(generator.Name); 
             
             #line default
@@ -65,7 +65,7 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid(""");
             
-            #line 30 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
+            #line 30 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Properties\AssemblyInfoTemplate.tt"
  Write(generator.Guid.ToLower()); 
             
             #line default

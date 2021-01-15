@@ -1,4 +1,5 @@
-﻿using SEP_CRUD_DesignPattern.Templates.Project;
+﻿using SEP_CRUD_DesignPattern.Generators.Bases;
+using SEP_CRUD_DesignPattern.Templates.Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;

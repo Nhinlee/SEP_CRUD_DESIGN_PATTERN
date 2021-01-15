@@ -19,7 +19,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
+    #line 1 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class SolutionTemplate : SolutionTemplateBase
     {
@@ -33,7 +33,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
                     "rsion 16\r\nVisualStudioVersion = 16.0.30611.23\r\nMinimumVisualStudioVersion = 10.0" +
                     ".40219.1\r\n");
             
-            #line 12 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
+            #line 12 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
 
 	//Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatFormToGenerate", "FormatFormToGenerate\FormatFormToGenerate.csproj", "{D381F227-62FD-4455-B79A-3D914C95342C}"
 	List<ProjectGenerator> projects = generator.GetProjects();
@@ -51,7 +51,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
                     "\n\t\tDebug|Any CPU = Debug|Any CPU\r\n\t\tRelease|Any CPU = Release|Any CPU\r\n\tEndGloba" +
                     "lSection\r\n\tGlobalSection(ProjectConfigurationPlatforms) = postSolution\r\n\t");
             
-            #line 29 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
+            #line 29 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
 
 		//{D381F227-62FD-4455-B79A-3D914C95342C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		//{D381F227-62FD-4455-B79A-3D914C95342C}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -73,7 +73,7 @@ namespace SEP_CRUD_DesignPattern.Templates.Project
                     "onNode = FALSE\r\n\tEndGlobalSection\r\n\tGlobalSection(ExtensibilityGlobals) = postSo" +
                     "lution\r\n\t\tSolutionGuid = {");
             
-            #line 48 "E:\CS\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
+            #line 48 "E:\CS\sep_crup_design_pattern\SEP_CRUD_DesignPattern\SEP_CRUD_DesignPattern\Templates\Project\SolutionTemplate.tt"
  Write(generator.Guid); 
             
             #line default

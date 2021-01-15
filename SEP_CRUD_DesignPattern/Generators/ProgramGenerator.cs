@@ -1,4 +1,6 @@
-﻿using SEP_CRUD_DesignPattern.Templates.Project;
+﻿using SEP_CRUD_DesignPattern.Generators.Bases;
+using SEP_CRUD_DesignPattern.Generators.Helpers;
+using SEP_CRUD_DesignPattern.Templates.Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +9,13 @@ using System.Threading.Tasks;
 
 namespace SEP_CRUD_DesignPattern.Generators
 {
-    public class ProgramGenerator : FileGenerator
+    public class ProgramGenerator : ClassGenerator
     {
-        public string Namespace { get; private set; }
-        public FormGenerator StartForm { get; private set; }
-        public ProgramGenerator(string nameSpace, FormGenerator startForm)
+        public ClassGenerator StartForm { get; private set; }
+        public ProgramGenerator(FormGenerator startForm)
         {
             this.Name = "Program";
-            this.Namespace = nameSpace;
+            this.Namespace = NamespaceHelper.Instance.ProjectNamespace;
             this.StartForm = startForm;
         }
         public override string GetFileName()

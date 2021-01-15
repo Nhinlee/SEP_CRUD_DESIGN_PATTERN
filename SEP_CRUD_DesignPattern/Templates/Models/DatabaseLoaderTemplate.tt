@@ -1,0 +1,134 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+namespace <#= generator.Namespace #>
+{
+    public class <#= generator.Name #>
+    {
+        // Singleton
+        private static <#= generator.Name #> _instance = new <#= generator.Name #>();
+        private DatabaseLoader() { Init(); }
+        public static <#= generator.Name #> Instance { get => _instance ; }
+        // -------------------------------------------------------------
+
+        // Private Fields
+        private SqlConnection connection;
+        private SqlCommand command;
+
+        // Properties
+        public SqlConnectionStringBuilder ConnectionStringBuilder{ get; set; }
+
+        public string DataSource { get => ConnectionStringBuilder.DataSource; }
+        public string InitalCatalog { get => ConnectionStringBuilder.InitialCatalog; }
+        public string UserID { get => ConnectionStringBuilder.UserID;}
+        public string Password { get => ConnectionStringBuilder.Password;}
+
+        public string ConnectionString
+        {
+            get
+            {
+                return ConnectionStringBuilder.ConnectionString;
+            }
+        }
+
+        public List<string> SelectedTables { get; } = new List<string>
+        {
+		    <#
+            
+            for(int i=0; i<generator.Tables.Count; i++)
+            {
+                Write($"\"{generator.Tables[i].Name}\", ");
+            }
+            WriteLine("");
+            #>
+        };
+
+
+        // Private Methods
+        private void Init()
+        {
+            ConnectionStringBuilder = new SqlConnectionStringBuilder();
+            ConnectionStringBuilder.DataSource = "<#= generator.Builder.DataSource #>";
+            ConnectionStringBuilder.InitialCatalog = "<#= generator.Builder.InitialCatalog #>";
+            ConnectionStringBuilder.UserID = "<#= generator.Builder.UserID #>";
+            ConnectionStringBuilder.Password = "<#= generator.Builder.Password #>";
+        }
+
+        private List<string> LoadAllDBTableName()
+        {
+            try
+            {
+                // Prepare 
+                OpenConnection();
+                List<string> rs = new List<string>();
+                command = new SqlCommand(@"SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND
+    OBJECTPROPERTY(OBJECT_ID(QUOTENAME(TABLE_SCHEMA) +
+        N'.' +
+        QUOTENAME(TABLE_NAME)), 'IsMSShipped') = 0", connection);
+                command.CommandType = System.Data.CommandType.Text;
+
+                // Execute
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    string name = "";
+                    while (reader.Read())
+                    {
+                        try
+                        {
+                            name = reader.GetString(0);
+                        }
+                        catch (Exception)
+                        {
+                            name = "";
+                        }
+                        if (name != null && name.Length != 0) rs.Add(name);
+                    }
+                }
+
+                // Result
+                return rs;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        private void OpenConnection()
+        {
+            try
+            {
+                connection = new SqlConnection(ConnectionString);
+                connection.Open();
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        private void CloseConnection()
+        {
+            try
+            {
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+    }
+}

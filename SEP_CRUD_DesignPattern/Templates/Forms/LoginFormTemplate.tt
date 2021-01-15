@@ -1,0 +1,82 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="SEP_CRUD_DesignPattern.Generators.Helpers" #>
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Windows.Forms;
+using <#= NamespaceHelper.Instance.ModelsNamespace #>;
+
+namespace <#= generator.Namespace #>
+{
+    public partial class <#= generator.Name #> : Form
+    {
+        public Action OnLoginSuccess;
+        
+        public <#= generator.Name #>()
+        {
+            InitializeComponent();
+            
+            // Add Event Handler
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+
+            // Setup binding source for UI controller component
+            bindingSourceLoginDB.DataSource = new SqlConnectionStringBuilder();
+            tbServerName.DataBindings.Add("Text", bindingSourceLoginDB, "DataSource");
+            tbUserName.DataBindings.Add("Text", bindingSourceLoginDB, "UserID");
+            tbPassword.DataBindings.Add("Text", bindingSourceLoginDB, "Password");
+
+            // Testing purpose
+            var source = (bindingSourceLoginDB.Current as SqlConnectionStringBuilder);
+            source.DataSource = DatabaseLoader.Instance.DataSource;
+            source.UserID = DatabaseLoader.Instance.UserID;
+            source.Password = DatabaseLoader.Instance.Password;
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            // Get connection string
+            var connectionString = GetConnectionString();
+            // Test connection
+            if (!TestDBConnection(connectionString))
+            {
+                MessageBox.Show("Connection Failed");
+                return;
+            }
+            
+            // Close if success
+            MessageBox.Show("Login Succeed :)))");
+            OnLoginSuccess?.Invoke();
+            this.Close();
+        }
+
+        private bool TestDBConnection(string connectionString)
+        {
+            bool isConnected = false;
+            // try connect to db
+            try
+            {
+                var connection = new SqlConnection(connectionString);
+                connection.Open();
+                isConnected = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return isConnected;
+        }
+
+        private string GetConnectionString()
+        {
+            return (bindingSourceLoginDB.Current as SqlConnectionStringBuilder).ConnectionString;
+        }
+    }
+}

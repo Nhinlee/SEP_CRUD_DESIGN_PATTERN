@@ -14,13 +14,19 @@ namespace SEP_CRUD_DesignPattern
         public LoginDBForm()
         {
             InitializeComponent();
-            
+
             // Setup binding source for UI controller component
             bindingSourceLoginDB.DataSource = new SqlConnectionStringBuilder();
             tbServerName.DataBindings.Add("Text", bindingSourceLoginDB, "DataSource");
             tbUserName.DataBindings.Add("Text", bindingSourceLoginDB, "UserID");
             tbPassword.DataBindings.Add("Text", bindingSourceLoginDB, "Password");
             cbSelectDB.DataBindings.Add("Text", bindingSourceLoginDB, "InitialCatalog");
+
+            // Testing purpose
+            var source = (bindingSourceLoginDB.Current as SqlConnectionStringBuilder);
+            source.DataSource = "DESKTOP-1RVEUQ2";
+            source.UserID = "nhinlee";
+            source.Password = ".";
         }
 
         //-------------------------Event Handlers---------------------------------------------//
