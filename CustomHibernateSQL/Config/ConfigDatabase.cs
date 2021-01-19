@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomHibernateSQL.SQLServer
+namespace CustomHibernateSQL.Config
 {
     class SQLConfig
     {
@@ -15,6 +15,6 @@ namespace CustomHibernateSQL.SQLServer
 
         }
 
-        public string ConnectionString { get; set; } = "Data Source=ZEPHYS\\SQLEXPRESS;Initial Catalog=test;User ID=ngoc;Password=."; 
+        public string ConnectionString { get; set; } = "Data Source=ZEPHYS\\SQLEXPRESS;Initial Catalog=test;User ID=ngoc;Password=.";
     }
 }

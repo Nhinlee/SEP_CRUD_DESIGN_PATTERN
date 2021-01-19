@@ -8,8 +8,17 @@ namespace CustomHibernateSQL.DAO
 {
     public abstract class BaseDAO<T>
     {
-        private IDatabase db = new SQLDatabase();
+        private IDatabase db;
         private Type type = typeof(T);
+        protected void setDatabase(string v)
+        {
+            if(v.Equals("SQL")){
+                db = new SQLDatabase();
+            }
+            else{
+                db = new SQLDatabase();
+            }
+        }
         public List<T> GetAll()
         {
             return db.GetAll(type).Cast<T>().ToList();

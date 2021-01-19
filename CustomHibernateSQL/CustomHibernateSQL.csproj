@@ -51,11 +51,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLServer\SQLColumn.cs" />
-    <Compile Include="SQLServer\SQLConfig.cs" />
     <Compile Include="SQLServer\SQLDatabase.cs" />
     <Compile Include="SQLServer\SQLExecuter.cs" />
     <Compile Include="SQLServer\SQLTable.cs" />
-    <Compile Include="SQLServer\SQLTableFactory.cs" />
+    <Compile Include="MySQL\MySQLColumn.cs" />
+    <Compile Include="MySQL\MySQLDatabase.cs" />
+    <Compile Include="MySQL\MySQLExecuter.cs" />
+    <Compile Include="MySQL\MySQLTable.cs" />
+    <Compile Include="TableFactory\TableFactory.cs" />
+    <Compile Include="Config\ConfigDatabase.cs" />
     <Compile Include="TestingHibernateSQL\Employee.cs" />
     <Compile Include="TestingHibernateSQL\EmployeesDAO.cs" />
   </ItemGroup>

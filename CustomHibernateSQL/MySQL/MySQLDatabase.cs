@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using CustomHibernateSQL.AbstractDB;
 using CustomHibernateSQL.TableFactory;
 
-namespace CustomHibernateSQL.SQLServer
+namespace CustomHibernateSQL.MySQL
 {
-    class SQLDatabase : IDatabase
+    class MySQLDatabase : IDatabase
     {
         public int Delete(object obj)
         {

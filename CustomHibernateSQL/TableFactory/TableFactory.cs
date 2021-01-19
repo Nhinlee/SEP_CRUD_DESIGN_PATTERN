@@ -5,8 +5,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace CustomHibernateSQL.SQLServer
+using CustomHibernateSQL.SQLServer;
+namespace CustomHibernateSQL.TableFactory
 {
     class SQLTableFactory
     {
@@ -27,7 +27,7 @@ namespace CustomHibernateSQL.SQLServer
                 table.Columns.Add(col);
             }
 
-            return table; 
+            return table;
         }
     }
 }
